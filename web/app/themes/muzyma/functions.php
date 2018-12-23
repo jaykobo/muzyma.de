@@ -82,7 +82,7 @@ add_filter( 'template_include', function( $template ) {
 
 function wpse_allowedtags() {
 // Add custom tags to this string
-    return '<script>,<style>,<br>,<em>,<i>,<ul>,<ol>,<li>,<a>,<p>,<img>,<video>,<audio>'; 
+    return '<script>,<style>,<br>,<em>,<i>,<ul>,<ol>,<li>,<a>,<p>,<img>,<video>,<audio>';
 }
 
 if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) :
@@ -100,7 +100,7 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) :
 
             //Set the excerpt word count and only break after sentence is complete.
                 $excerpt_word_count = 15;
-                $excerpt_length = apply_filters('excerpt_length', $excerpt_word_count); 
+                $excerpt_length = apply_filters('excerpt_length', $excerpt_word_count);
                 $tokens = array();
                 $excerptOutput = '';
                 $count = 0;
@@ -108,9 +108,9 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) :
                 // Divide the string into tokens; HTML tags, or words, followed by any whitespace
                 preg_match_all('/(<[^>]+>|[^<>\s]+)\s*/u', $wpse_excerpt, $tokens);
 
-                foreach ($tokens[0] as $token) { 
+                foreach ($tokens[0] as $token) {
 
-                    if ($count >= $excerpt_word_count && preg_match('/[\,\;\?\.\!]\s*$/uS', $token)) { 
+                    if ($count >= $excerpt_word_count && preg_match('/[\,\;\?\.\!]\s*$/uS', $token)) {
                     // Limit reached, continue until , ; ? . or ! occur at the end
                         $excerptOutput .= trim($token);
                         break;
@@ -125,8 +125,8 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) :
 
             $wpse_excerpt = trim(force_balance_tags($excerptOutput));
 
-                // $excerpt_end = ' <a href="'. esc_url( get_permalink() ) . '">' . '&nbsp;&raquo;&nbsp;' . sprintf(__( 'Read more about: %s &nbsp;&raquo;', 'wpse' ), get_the_title()) . '</a>'; 
-                // $excerpt_more = apply_filters('excerpt_more', ' ' . $excerpt_end); 
+                // $excerpt_end = ' <a href="'. esc_url( get_permalink() ) . '">' . '&nbsp;&raquo;&nbsp;' . sprintf(__( 'Read more about: %s &nbsp;&raquo;', 'wpse' ), get_the_title()) . '</a>';
+                // $excerpt_more = apply_filters('excerpt_more', ' ' . $excerpt_end);
 
                 // $pos = strrpos($wpse_excerpt, '</');
                 // if ($pos !== false)
@@ -142,7 +142,7 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) :
         return apply_filters('wpse_custom_wp_trim_excerpt', $wpse_excerpt, $raw_excerpt);
     }
 
-endif; 
+endif;
 
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'wpse_custom_wp_trim_excerpt');
@@ -221,7 +221,7 @@ function mp_mce_before_init_insert_formats( $init_array ) {
         ),
     );
     $init_array['style_formats'] = json_encode( $style_formats );
-    return $init_array; 
+    return $init_array;
 }
 add_filter( 'tiny_mce_before_init', 'mp_mce_before_init_insert_formats' );
 
@@ -231,7 +231,7 @@ add_filter( 'tiny_mce_before_init', 'mp_mce_before_init_insert_formats' );
 function mp_custom_editor_stylesheet() {
    add_editor_style('css/editor-style.css');
 }
-add_action( 'admin_head', 'mp_custom_editor_stylesheet' ); 
+add_action( 'admin_head', 'mp_custom_editor_stylesheet' );
 
 
 
@@ -314,7 +314,7 @@ add_filter('intermediate_image_sizes_advanced', 'mp_remove_default_image_sizes')
 // ADD CUSTOM IMAGE SIZE INTO MEDIA UPLOADER
 // ================================================================================================
 
- 
+
 function mp_new_image_sizes($sizes) {
     $addsizes = array(
         "post-thumbnail" => 'Post Vorschaubild',
@@ -336,9 +336,9 @@ add_filter('image_size_names_choose', 'mp_new_image_sizes');
 function nav_breadcrumb() {
 
  $delimiter = '&raquo;';
- $home = 'Home'; 
- $before = '<span class="current-page">'; 
- $after = '</span>'; 
+ $home = 'Home';
+ $before = '<span class="current-page">';
+ $after = '</span>';
 
  if ( !is_home() && !is_front_page() || is_paged() ) {
 
@@ -426,7 +426,7 @@ function nav_breadcrumb() {
 
      echo '</nav>';
 
- } 
+ }
 }
 
 
@@ -475,11 +475,11 @@ function mp_cpt_strickmuetzen() {
         'show_ui'               => true,
         'show_in_menu'          => true,
         'menu_position'         => 30,
-        'menu_icon'             => 'http://muzyma.app/app/themes/muzyma/img/knit_cap-icon.png',
+        'menu_icon'             => '/app/themes/muzyma/img/knit_cap-icon.png',
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => false,
         'can_export'            => true,
-        'has_archive'           => false,        
+        'has_archive'           => false,
         'exclude_from_search'   => false,
         'publicly_queryable'    => true,
         'capability_type'       => 'page',
@@ -528,11 +528,11 @@ function mp_cpt_genaehte_muetzen() {
         'show_ui'               => true,
         'show_in_menu'          => true,
         'menu_position'         => 31,
-        'menu_icon'             => 'http://muzyma.app/app/themes/muzyma/img/sew_machine-icon.png',
+        'menu_icon'             => '/app/themes/muzyma/img/sew_machine-icon.png',
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => false,
         'can_export'            => true,
-        'has_archive'           => false,        
+        'has_archive'           => false,
         'exclude_from_search'   => false,
         'publicly_queryable'    => true,
         'capability_type'       => 'page',
@@ -581,12 +581,12 @@ function mp_cpt_haekelmuetzen() {
         'show_ui'               => true,
         'show_in_menu'          => true,
         'menu_position'         => 32,
-        // 'menu_icon'             => 'http://muzyma.app/app/themes/muzyma/img/knit_cap-icon.png',
+        // 'menu_icon'             => '/app/themes/muzyma/img/knit_cap-icon.png',
         'menu_icon'             => 'dashicons-warning',
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => false,
         'can_export'            => true,
-        'has_archive'           => false,        
+        'has_archive'           => false,
         'exclude_from_search'   => false,
         'publicly_queryable'    => true,
         'capability_type'       => 'page',
@@ -635,11 +635,11 @@ function mp_cpt_yogakissen() {
         'show_ui'               => true,
         'show_in_menu'          => true,
         'menu_position'         => 33,
-        'menu_icon'             => 'http://muzyma.app/app/themes/muzyma/img/pillow-icon.png',
+        'menu_icon'             => '/app/themes/muzyma/img/pillow-icon.png',
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => false,
         'can_export'            => true,
-        'has_archive'           => false,        
+        'has_archive'           => false,
         'exclude_from_search'   => false,
         'publicly_queryable'    => true,
         'capability_type'       => 'page',
@@ -692,7 +692,7 @@ function mp_cpt_kunstgalerie() {
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => false,
         'can_export'            => true,
-        'has_archive'           => false,        
+        'has_archive'           => false,
         'exclude_from_search'   => false,
         'publicly_queryable'    => true,
         'capability_type'       => 'page',
