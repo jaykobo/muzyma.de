@@ -9,12 +9,12 @@
 	skel.init({
 		reset: 'full',
 		breakpoints: {
-			'global': { range: '*', href: 'css/style.css', containers: 1200, grid: { gutters: 50 } },
-			'normal': { range: '-1280', href: 'css/style-normal.css', containers: 960, grid: { gutters: 40 } },
-			'narrow': { range: '-1080', href: 'css/style-narrow.css', containers: '100%' },
-			'narrower': { range: '-820', href: 'css/style-narrower.css', grid: { gutters: 30, collapse: 1 } },
-			'mobile': { range: '-736', href: 'css/style-mobile.css', grid: { collapse: 2 }, viewport: { scalable: false } },
-			'mobilep': { range: '-480', href: 'css/style-mobilep.css', grid: { gutters: 15 } }
+			'global': { range: '*', href: 'app/themes/muzyma/css/style.css', containers: 1200, grid: { gutters: 50 } },
+			'normal': { range: '-1280', href: 'app/themes/muzyma/css/style-normal.css', containers: 960, grid: { gutters: 40 } },
+			'narrow': { range: '-1080', href: 'app/themes/muzyma/css/style-narrow.css', containers: '100%' },
+			'narrower': { range: '-820', href: 'app/themes/muzyma/css/style-narrower.css', grid: { gutters: 30, collapse: 1 } },
+			'mobile': { range: '-736', href: 'app/themes/muzyma/css/style-mobile.css', grid: { collapse: 2 }, viewport: { scalable: false } },
+			'mobilep': { range: '-480', href: 'app/themes/muzyma/css/style-mobilep.css', grid: { gutters: 15 } }
 		},
 		plugins: {
 			layers: {
@@ -47,14 +47,14 @@
 
 		var	$window = $(window),
 			$body = $('body');
-			
+
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
-			
+
 			$window.on('load', function() {
 				$body.removeClass('is-loading');
 			});
-			
+
 		// Forms (IE<10).
 			var $form = $('form');
 			if ($form.length > 0) {
@@ -71,26 +71,26 @@
 				}
 
 			}
-			
+
 		// CSS polyfills (IE<9).
 			if (skel.vars.IEVersion < 9)
 				$(':last-child').addClass('last-child');
 
 		// Dropdowns.
-			$('#nav > ul').dropotron({ 
+			$('#nav > ul').dropotron({
 				mode: 'fade',
 				speed: 300,
 				alignment: 'center',
 				noOpenerFade: true
 			});
-			
+
 	});
 
 })(jQuery);
 
 	// scrolly
-		jQuery.fn.n33_scrolly = function(offset) {				
-			
+		jQuery.fn.n33_scrolly = function(offset) {
+
 			jQuery(this).click(function(e) {
 				var h = jQuery(this).attr('href'), target;
 
@@ -98,7 +98,7 @@
 				{
 					var pos = Math.max(target.offset().top, 0);
 					e.preventDefault();
-					
+
 					if (offset)
 					{
 						if (typeof(offset) == 'function')
@@ -106,13 +106,13 @@
 						else
 							pos -= offset;
 					}
-					
+
 					jQuery('body,html').animate({ scrollTop: pos }, 1000, 'swing');
 				}
 			});
 		};
-		
-		
+
+
 /*********************************************************************************/
 /* Initialize                                                                    */
 /*********************************************************************************/
