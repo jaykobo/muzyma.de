@@ -13,14 +13,14 @@
         <script src="<?php bloginfo( 'template_directory' ) ?>/js/jquery.min.js"></script>
         <script src="<?php bloginfo( 'template_directory' ) ?>/js/jquery.dropotron.min.js"></script>
         <script src="<?php bloginfo( 'template_directory' ) ?>/js/skel.min.js"></script>
-        <!-- <script src="<?php bloginfo( 'template_directory' ) ?>/js/skel-layers.min.js"></script> -->
+        <script src="<?php bloginfo( 'template_directory' ) ?>/js/skel-layers.min.js"></script>
         <script src="<?php bloginfo( 'template_directory' ) ?>/js/init.js"></script>
-        
+
         <script src="<?php bloginfo( 'template_directory' ) ?>/js/imagelightbox.js"></script>
 
         <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/custom.css" />
         <!--[if lte IE 8]><link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/ie/v8.css" /><![endif]-->
-        
+
 
         <!-- ONLY FOR DEV -->
         <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/reset.css" />
@@ -29,7 +29,7 @@
     </head>
     <?php
         $bodyclass = '';
-        
+
         if (is_front_page()) {
             $bodyclass = 'homepage';
         }
@@ -39,10 +39,10 @@
         <!-- Header -->
             <div id="header-wrapper" class="site-header">
                 <div id="header" class="container">
-                    
+
                     <!-- Logo -->
                   <h1 id="logo"><a href="<?php echo home_url('/'); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-                    
+
                     <!-- Nav -->
                     <?php
                         $args =  array(
