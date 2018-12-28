@@ -72,7 +72,19 @@ add_filter( 'template_include', function( $template ) {
 
 
 
+// ================================================================================================
+// REDIRECT CUSTOM SINGLE-PAGE FROM CPT (Kunstgallerie)
+// ================================================================================================
 
+// From https://blog.kulturbanause.de/2016/02/wordpress-single-seiten-von-custom-post-types-umleiten/
+
+function mp_template_redirect() {
+    if(is_singular('gallery')) {
+        wp_redirect( home_url('/kunstgalerie/') );
+        exit();
+    }
+}
+add_action('template_redirect', 'mp_template_redirect');
 
 
 // ================================================================================================
