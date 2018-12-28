@@ -79,7 +79,7 @@
 		// Dropdowns.
 			$('#nav > ul').dropotron({
 				mode: 'fade',
-				speed: 300,
+				speed: 150,
 				alignment: 'center',
 				noOpenerFade: true
 			});
@@ -123,7 +123,7 @@
 			var $window = $(window);
 
 			// Scrolly links
-				$('.scrolly').n33_scrolly();
+				$('.scrolly, #nav .menu-item.scrolly > a').n33_scrolly();
 
 
 		});
