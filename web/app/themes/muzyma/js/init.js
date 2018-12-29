@@ -28,7 +28,7 @@
 					height: { mobilep: 300, mobile: 180 },
 					clickToHide: true,
 					swipeToHide: false,
-					html: '<a href="index.html" class="link depth-0">Home</a><div data-action="navList" data-args="nav"></div>',
+					html: '<a href="/" class="link depth-0">Home</a><div data-action="navList" data-args="nav"></div>',
 					orientation: 'vertical'
 				},
 				navButton: {
