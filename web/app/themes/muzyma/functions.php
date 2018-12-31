@@ -5,7 +5,7 @@
 // ================================================================================================
 
 
-// Grab ACF image alt or use fallback:
+// Grab ACF image alt-text otherwise use fallback:
 if ( ! function_exists( 'acf_image_fallback_alt' ) ) {
 
     function acf_image_fallback_alt($image) {
@@ -43,52 +43,13 @@ function posts_link_attributes() {
 
 
 
-// ================================================================================================
-// CUSTOM POST TYPES PAGE AND CATEGORY OPTIONS
-// ================================================================================================
 
-// All Products CPT should use ONE single-post_type-slug template:
-add_filter( 'template_include', function( $template ) {
-    if ( is_singular( array( 'p-strickmuetzen', 'p-genaehte-muetzen', 'p-haekelmuetzen', 'p-yogakissen' ) ) ) {
-        $locate = locate_template( 'single-product.php', false, false );
-        if ( ! empty( $locate ) ) {
-            $template = $locate;
-        }
-    }
-    return $template;
-});
-
-
-// Change single template for posts with category 'poesie':
-add_filter( 'template_include', function( $template ) {
-    if ( in_category( 'poesie' ) ) {
-        $locate = locate_template( 'single-poesie.php', false, false );
-        if ( ! empty( $locate ) ) {
-            $template = $locate;
-        }
-    }
-    return $template;
-});
-
-
-
-// ================================================================================================
-// REDIRECT CUSTOM SINGLE-PAGE FROM CPT (Kunstgallerie)
-// ================================================================================================
-
-// From https://blog.kulturbanause.de/2016/02/wordpress-single-seiten-von-custom-post-types-umleiten/
-
-function mp_template_redirect() {
-    if(is_singular('gallery')) {
-        wp_redirect( home_url('/kunstgalerie/') );
-        exit();
-    }
-}
-add_action('template_redirect', 'mp_template_redirect');
 
 
 // ================================================================================================
 // CUSTOMIZE THE_EXCERPT FUNCTION
+//
+// From https://wordpress.stackexchange.com/a/141136
 // ================================================================================================
 
 
@@ -207,7 +168,7 @@ function mp_mce_before_init_insert_formats( $init_array ) {
         ),
     // Smiley List
         array(
-            'title' => 'Smiley Listenpunkte',
+            'title' => 'Smiley Listenpunkt',
             'selector' => 'ul',
             'classes' => 'list-type-smiley',
         ),
@@ -306,11 +267,11 @@ add_action( 'after_setup_theme', 'mp_theme_features' );
 
 
 
-
 // ================================================================================================
-// REMOVE DEFAULT WP IMAGE SIZES
+// IMAGE SETTINGS
 // ================================================================================================
 
+// remove default wp image sizes:
 function mp_remove_default_image_sizes( $sizes) {
     unset( $sizes['medium_large']); // 768
 
@@ -320,14 +281,7 @@ add_filter('intermediate_image_sizes_advanced', 'mp_remove_default_image_sizes')
 
 
 
-
-
-
-// ================================================================================================
-// ADD CUSTOM IMAGE SIZE INTO MEDIA UPLOADER
-// ================================================================================================
-
-
+// Add custom image size into Media Uploader:
 function mp_new_image_sizes($sizes) {
     $addsizes = array(
         "post-thumbnail" => 'Post Vorschaubild',
@@ -344,9 +298,10 @@ add_filter('image_size_names_choose', 'mp_new_image_sizes');
 
 // ================================================================================================
 // BREADCRUMB NAVIGATION
+//
+// FROM https://blog.kulturbanause.de/2011/08/wordpress-breadcrumb-navigation-ohne-plugin/
 // ================================================================================================
 
-// FROM https://blog.kulturbanause.de/2011/08/wordpress-breadcrumb-navigation-ohne-plugin/
 function nav_breadcrumb() {
 
     $delimiter = '&raquo;';
@@ -445,11 +400,36 @@ function nav_breadcrumb() {
 
 
 
+// ================================================================================================
+// CUSTOM POST TYPES -- PAGE AND CATEGORY OPTIONS
+// ================================================================================================
 
+// All Products CPT should use ONE single-post_type-slug template:
+add_filter( 'template_include', function( $template ) {
+    if ( is_singular( array( 'p-strickmuetzen', 'p-genaehte-muetzen', 'p-haekelmuetzen', 'p-yogakissen' ) ) ) {
+        $locate = locate_template( 'single-product.php', false, false );
+        if ( ! empty( $locate ) ) {
+            $template = $locate;
+        }
+    }
+    return $template;
+});
+
+
+// Change single template for posts with category 'poesie':
+add_filter( 'template_include', function( $template ) {
+    if ( in_category( 'poesie' ) ) {
+        $locate = locate_template( 'single-poesie.php', false, false );
+        if ( ! empty( $locate ) ) {
+            $template = $locate;
+        }
+    }
+    return $template;
+});
 
 
 // ================================================================================================
-// CUSTOM POST TYPES
+// REGISTER CUSTOM POST TYPES
 // ================================================================================================
 
 // Register Custom Post Type - Strickmützen
@@ -716,6 +696,17 @@ function mp_cpt_kunstgalerie() {
 }
 add_action( 'init', 'mp_cpt_kunstgalerie', 0 );
 
+
+// REDIRECT CUSTOM SINGLE-PAGE FROM CPT (Kunstgallerie)
+// From https://blog.kulturbanause.de/2016/02/wordpress-single-seiten-von-custom-post-types-umleiten/
+
+function mp_template_redirect() {
+    if(is_singular('gallery')) {
+        wp_redirect( home_url('/kunstgalerie/') );
+        exit();
+    }
+}
+add_action('template_redirect', 'mp_template_redirect');
 
 
 
