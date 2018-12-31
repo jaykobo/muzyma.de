@@ -215,8 +215,8 @@ add_filter('get_the_excerpt', 'wpse_custom_wp_trim_excerpt');
 add_action( 'after_setup_theme', 'mp_register_nav' );
 
 function mp_register_nav() {
-    register_nav_menu( 'nav_main', 'Navigation oben im Header');
-    register_nav_menu( 'nav_footer', 'Navigation unten im Footer (Copyright)');
+    register_nav_menu( 'nav_main', 'Header');
+    register_nav_menu( 'nav_footer', 'Footer');
 }
 
 
