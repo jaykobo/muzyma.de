@@ -109,7 +109,7 @@ function my_post_gallery($output, $attr) {
 
         $output .= "<section class=\"6u\">\n";
         $output .= "<div class=\"image-wrapper\">\n";
-        $output .= "<a href=\"{$url}\" class=\"image\">\n";
+        $output .= "<a href=\"{$url}\" class=\"image lightbox\">\n";
         $output .= "<img src=\"{$src}\" alt=\"{$alt}\" />\n";
         $output .= "</a>\n";
         $output .= "</div>\n";
