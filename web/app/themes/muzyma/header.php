@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!--[if lte IE 8]><script src="<?php bloginfo( 'template_directory' ) ?>/css/ie/html5shiv.js"></script><![endif]-->
-        <!-- <noscript> -->
+        <noscript>
             <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/skel.css" />
             <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/style.css" />
-        <!-- </noscript> -->
+        </noscript>
         <script src="<?php bloginfo( 'template_directory' ) ?>/js/jquery.min.js"></script>
         <script src="<?php bloginfo( 'template_directory' ) ?>/js/jquery.dropotron.min.js"></script>
         <script src="<?php bloginfo( 'template_directory' ) ?>/js/skel.min.js"></script>
