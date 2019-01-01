@@ -540,7 +540,7 @@ function mp_cpt_strickmuetzen() {
         'not_found_in_trash'    => 'Keine Strickmützen im Papierkorb gefunden',
     );
     $rewrite = array(
-        'slug'                  => 'handgemacht/strickmuetzen',
+        'slug'                  => 'strickmuetzen',
         'with_front'            => false,
     );
     $args = array(
@@ -593,7 +593,7 @@ function mp_cpt_genaehte_muetzen() {
         'not_found_in_trash'    => 'Keine genähte Mützen im Papierkorb gefunden',
     );
     $rewrite = array(
-        'slug'                  => 'handgemacht/genaehte-muetzen',
+        'slug'                  => 'genaehte-muetzen',
         'with_front'            => false,
     );
     $args = array(
@@ -646,7 +646,7 @@ function mp_cpt_haekelmuetzen() {
         'not_found_in_trash'    => 'Keine Häkelmützen im Papierkorb gefunden',
     );
     $rewrite = array(
-        'slug'                  => 'handgemacht/haekelmuetzen',
+        'slug'                  => 'haekelmuetzen',
         'with_front'            => false,
     );
     $args = array(
@@ -700,7 +700,7 @@ function mp_cpt_yogakissen() {
         'not_found_in_trash'    => 'Keine Yogakissen im Papierkorb gefunden',
     );
     $rewrite = array(
-        'slug'                  => 'handgemacht/yogakissen',
+        'slug'                  => 'yogakissen',
         'with_front'            => false,
     );
     $args = array(
