@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a18181d3ebd327b81152f8894966f81",
+    "content-hash": "8dba9deaa365eb046beb60af674cf51e",
     "packages": [
         {
             "name": "composer/installers",
@@ -486,16 +486,16 @@
             "homepage": "https://wordpress.org/plugins/classic-editor/"
         },
         {
-            "name": "wpackagist-plugin/force-regenerate-thumbnails",
-            "version": "2.0.6",
+            "name": "wpackagist-plugin/regenerate-thumbnails",
+            "version": "3.0.2",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/force-regenerate-thumbnails/",
-                "reference": "tags/2.0.6"
+                "url": "https://plugins.svn.wordpress.org/regenerate-thumbnails/",
+                "reference": "tags/3.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/force-regenerate-thumbnails.2.0.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.3.0.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -503,7 +503,47 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/force-regenerate-thumbnails/"
+            "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-optimize",
+            "version": "2.2.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-optimize/",
+                "reference": "tags/2.2.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-optimize.2.2.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-optimize/"
+        },
+        {
+            "name": "wpackagist-plugin/wpforms-lite",
+            "version": "1.5.0.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wpforms-lite/",
+                "reference": "tags/1.5.0.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wpforms-lite.1.5.0.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wpforms-lite/"
         }
     ],
     "packages-dev": [
@@ -513,12 +553,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "f370ac042dba652a93b6b1f330b33d86f3778b57"
+                "reference": "5f3e0c82ada2d16fdd637b24e095888f4abac43f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/f370ac042dba652a93b6b1f330b33d86f3778b57",
-                "reference": "f370ac042dba652a93b6b1f330b33d86f3778b57",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/5f3e0c82ada2d16fdd637b24e095888f4abac43f",
+                "reference": "5f3e0c82ada2d16fdd637b24e095888f4abac43f",
                 "shasum": ""
             },
             "conflict": {
@@ -582,6 +622,7 @@
                 "la-haute-societe/tcpdf": "<6.2.22",
                 "laravel/framework": ">=4,<4.0.99|>=4.1,<=4.1.31|>=4.2,<=4.2.22|>=5,<=5.0.35|>=5.1,<=5.1.46|>=5.2,<=5.2.45|>=5.3,<=5.3.31|>=5.4,<=5.4.36|>=5.5,<5.5.42|>=5.6,<5.6.30",
                 "laravel/socialite": ">=1,<1.0.99|>=2,<2.0.10",
+                "league/commonmark": ">=0.15.6,<0.18.1",
                 "magento/magento1ce": "<1.9.4",
                 "magento/magento1ee": ">=1.9,<1.14.4",
                 "magento/product-community-edition": ">=2,<2.2.7",
@@ -707,7 +748,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2018-12-23T19:42:44+00:00"
+            "time": "2018-12-30T13:00:21+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
