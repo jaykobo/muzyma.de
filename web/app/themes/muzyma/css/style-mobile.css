@@ -8,7 +8,7 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
-	body,input,textarea,select
+	body,input,textarea,select,button
 	{
 		font-size: 13pt;
 		letter-spacing: 0;

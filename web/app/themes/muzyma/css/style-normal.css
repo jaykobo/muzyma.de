@@ -8,17 +8,17 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
-	body,input,textarea,select
+	body,input,textarea,select,button
 	{
 		line-height: 1.5em;
 		font-size: 14pt;
 	}
-	
+
 	span.extra
 	{
 		display: none;
 	}
-	
+
 /*********************************************************************************/
 /* Wrappers                                                                      */
 /*********************************************************************************/
@@ -37,12 +37,12 @@
 		{
 			padding: 8em 0 4em 0;
 		}
-		
+
 	#promo-wrapper
 	{
 		padding: 5em 0 5em 0;
 	}
-	
+
 	#footer-wrapper
 	{
 		padding: 5em 0 5em 0;

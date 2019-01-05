@@ -899,9 +899,6 @@
 			display: inline-block;
 			font-size: 1.75em;
 		}
-		#promo h2:not(:last-child) {
-			margin-bottom: 0.5em;
-		}
 
 		#promo .button
 		{
@@ -910,7 +907,8 @@
 			color: #27636B;
 			font-size: 1.25em;
 		}
-		#promo .button:not(:only-child) {
+
+		#promo h2 + .button {
 			margin-left: 1em;
 		}
 
