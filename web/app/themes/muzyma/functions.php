@@ -789,13 +789,13 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
 */
 if ( ! function_exists( 'evolution_remove_jquery_migrate' ) ) :
 
-function evolution_remove_jquery_migrate( &$scripts) {
-    if(!is_admin()) {
-        $scripts->remove( 'jquery');
-        $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.4' );
+    function evolution_remove_jquery_migrate( &$scripts) {
+        if(!is_admin()) {
+            $scripts->remove( 'jquery');
+            $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.4' );
+        }
     }
-}
-add_filter( 'wp_default_scripts', 'evolution_remove_jquery_migrate' );
+    add_filter( 'wp_default_scripts', 'evolution_remove_jquery_migrate' );
 endif;
 
 
@@ -836,7 +836,7 @@ function evolution_disable_embeds_init() {
     add_filter( 'tiny_mce_plugins', 'evolution_disable_embeds_tiny_mce_plugin' );
 
     // Remove all embeds rewrite rules.
-    add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
+    add_filter( 'rewrite_rules_array', 'evolution_disable_embeds_rewrites' );
 
     // Remove filter of the oEmbed result before any HTTP requests are made.
     remove_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result', 10 );
@@ -856,6 +856,7 @@ function evolution_disable_embeds_tiny_mce_plugin( $plugins ) {
     return array_diff( $plugins, array( 'wpembed' ) );
 }
 
+
 /**
  * Remove all rewrite rules related to embeds.
  *
@@ -874,6 +875,7 @@ function evolution_disable_embeds_rewrites( $rules ) {
     return $rules;
 }
 
+
 /**
  * Remove embeds rewrite rules on plugin activation.
  *
@@ -885,6 +887,7 @@ function evolution_disable_embeds_remove_rewrite_rules() {
 }
 
 register_activation_hook( __FILE__, 'evolution_disable_embeds_remove_rewrite_rules' );
+
 
 /**
  * Flush rewrite rules on plugin deactivation.
