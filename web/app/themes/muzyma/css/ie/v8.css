@@ -15,6 +15,7 @@
 	form textarea,
 	input[type="button"],
 	input[type="submit"],
+	button[type="submit"],
 	input[type="reset"],
 	.button,
 	#logo a,
@@ -33,7 +34,7 @@
 		article
 		{
 		}
-		
+
 			section > .last-child,
 			article > .last-child
 			{
@@ -45,7 +46,7 @@
 			{
 				margin-bottom: 0;
 			}
-			
+
 /*********************************************************************************/
 /* Wrappers                                                                      */
 /*********************************************************************************/
@@ -54,9 +55,9 @@
 	{
 		background: url('../../img/promo.jpg');
 		background-size: cover;
-		-ms-behavior: url('css/ie/backgroundsize.min.htc');	
+		-ms-behavior: url('css/ie/backgroundsize.min.htc');
 	}
-	
+
 /*********************************************************************************/
 /* Header                                                                        */
 /*********************************************************************************/

@@ -249,7 +249,7 @@ nav.breadcrumb a {
 
 
 		.button.dark,
-		#footer-wrapper form input[type="submit"]
+		#footer-wrapper .wpforms-container form button[type="submit"]
 		{
 			background: #3d3d3d;
 			border-color: #3d3d3d;
@@ -257,7 +257,7 @@ nav.breadcrumb a {
 		}
 
 			.button.dark:hover,
-			#footer-wrapper form input[type="submit"]:hover
+			#footer-wrapper .wpforms-container form button[type="submit"]:hover
 			{
 				background:#4f4f4f;
 				border-color: #3d3d3d;
@@ -878,4 +878,104 @@ p > a > img[class*="wp-image-"] {
     outline: 0;
     border: 0;
     border-radius: 0.5em;
+}
+
+
+
+/*********************************************************************************/
+/* WordPress Plugin WPFORMS Styles                                               */
+/*********************************************************************************/
+
+/* GRID */
+div.wpforms-container-full .wpforms-form .wpforms-one-half {
+    width: 48%;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field {
+    clear: both;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-one-half {
+    float: left;
+    margin-left: 4%;
+    clear: none;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-first {
+    clear: both !important;
+    margin-left: 0 !important;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field {
+    padding: 10px 0;
+    position: relative;
+}
+
+/* UTILS */
+div.wpforms-container-full .wpforms-form .wpforms-field-label.wpforms-label-hide {
+    position: absolute;
+    left: -99999px;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field-label {
+    display: block;
+    font-weight: 700;
+    float: none;
+}
+
+/* HAS ERROR */
+div.wpforms-container-full .wpforms-form .wpforms-field input.wpforms-error, div.wpforms-container-full .wpforms-form .wpforms-field textarea.wpforms-error, div.wpforms-container-full .wpforms-form .wpforms-field select.wpforms-error {
+    border-color: #cc0000;
+}
+div.wpforms-container-full .wpforms-form label.wpforms-error {
+    display: block;
+    color: #990000;
+    font-size: 0.9em;
+    float: none;
+}
+
+/* SUBMIT BUTTON */
+div.wpforms-container-full .wpforms-form .wpforms-submit-container {
+    padding: 10px 0 0 0;
+    position: relative;
+    text-align: center;
+}
+
+/* HONEYPOT AREA */
+div.wpforms-container-full .wpforms-form .wpforms-field-hp {
+	display: none !important;
+	position: absolute !important;
+	left: -9000px !important;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field-hidden {
+	display: none;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-screen-reader-element {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0) !important;
+	height: 1px !important;
+	width: 1px !important;
+	border: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+	word-wrap: normal !important;
+}
+
+
+
+/* Media Queries
+----------------------------------------------------------------------------- */
+
+/* Small devices */
+@media only screen and (max-width: 736px) {
+
+	/* Mobile width override */
+	div.wpforms-container-full .wpforms-form .wpforms-mobile-full {
+		width: 100%;
+		margin-left: 0;
+		float: none;
+	}
 }

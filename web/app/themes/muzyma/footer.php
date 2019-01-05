@@ -6,33 +6,7 @@
                         <p>Hast Du Interesse an einer Mütze oder einem Yogakissen? Vielleicht in Deinen Lieblingsfarben oder einem bestimmten Strickmuster? Oder möchtest Du Lachyoga näher kennenlernen? Dann lass es mich einfach wissen und nimm Kontakt auf.</p>
                     </header>
                     <section class="container small">
-                    <div class="row">
-                        <section class="12u">
-                            <form method="post" action="kontakt.php" id="kontaktform">
-                                <div class="row collapse-at-2 half">
-                                    <div class="6u">
-                                        <input name="name" placeholder="Name" type="text" required />
-                                    </div>
-                                    <div class="6u">
-                                        <input name="email" placeholder="Email" type="email" required />
-                                    </div>
-                                </div>
-                                <div class="row half">
-                                    <div class="12u">
-                                        <textarea name="nachricht" placeholder="Nachricht" required></textarea>
-                                    </div>
-                                </div>
-                                <div class="row half">
-                                    <div class="12u feature">
-                                        <ul class="actions">
-                                            <li><input type="submit" value="Absenden" /></li>
-                                            <li><input type="reset" value="Angaben löschen" /></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </form>
-                        </section>
-                    </div>
+                        <?php echo do_shortcode('[wpforms id="617" title="false" description="false"]'); ?>
                     </section>
                 </div>
                 <div id="copyright" class="container">
