@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6ae0df322cbe46330d663e92dccab7c6",
+    "content-hash": "00046715bc7fcfa8756a163a2cfabd30",
     "packages": [
         {
             "name": "composer/installers",
@@ -487,15 +487,15 @@
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",
-            "version": "3.0.2",
+            "version": "3.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/regenerate-thumbnails/",
-                "reference": "tags/3.0.2"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.3.0.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.zip?timestamp=1546642223",
                 "reference": null,
                 "shasum": null
             },
