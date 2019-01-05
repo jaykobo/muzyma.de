@@ -1,15 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="<?php bloginfo( 'language' ); ?>">
     <head>
-        <title><?php wp_title(''); ?> <?php bloginfo( 'name' ); ?></title>
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
         <!--[if lte IE 8]><script src="<?php bloginfo( 'template_directory' ) ?>/css/ie/html5shiv.js"></script><![endif]-->
-        <noscript>
-            <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/skel.css" />
-            <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/style.css" />
-        </noscript>
 
         <script src="<?php bloginfo( 'template_directory' ) ?>/js/jquery.min.js"></script>
         <script src="<?php bloginfo( 'template_directory' ) ?>/js/jquery.dropotron.min.js"></script>
@@ -19,12 +14,13 @@
 
         <script src="<?php bloginfo( 'template_directory' ) ?>/js/imagelightbox.js"></script>
 
+        <noscript>
+            <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/skel.css" />
+            <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/style.css" />
+        </noscript>
+
         <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/custom.css" />
         <!--[if lte IE 8]><link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/ie/v8.css" /><![endif]-->
-
-
-        <!-- ONLY FOR DEV -->
-        <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/reset.css" />
 
         <?php wp_head(); ?>
     </head>
