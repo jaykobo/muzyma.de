@@ -18,7 +18,7 @@
     // Getting the post type of the current post
     $current_post_type      = get_post_type_object(get_post_type($post->ID));
     $current_post_type_slug = $current_post_type->rewrite['slug'];
-    $parent_page_url        = get_bloginfo('url').'/'.$current_post_type_slug;
+    $parent_page_url        = home_url().'/'.$current_post_type_slug;
 ?>
 
 <div class="wrapper dark style1 link-back">

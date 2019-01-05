@@ -4,23 +4,23 @@
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
-        <!--[if lte IE 8]><script src="<?php bloginfo( 'template_directory' ) ?>/css/ie/html5shiv.js"></script><![endif]-->
+        <!--[if lte IE 8]><script src="<?php echo esc_url( get_template_directory_uri() ) ?>/css/ie/html5shiv.js"></script><![endif]-->
 
-        <script src="<?php bloginfo( 'template_directory' ) ?>/js/jquery.min.js"></script>
-        <script src="<?php bloginfo( 'template_directory' ) ?>/js/jquery.dropotron.min.js"></script>
-        <script src="<?php bloginfo( 'template_directory' ) ?>/js/skel.min.js"></script>
-        <script src="<?php bloginfo( 'template_directory' ) ?>/js/skel-layers.min.js"></script>
-        <script src="<?php bloginfo( 'template_directory' ) ?>/js/init.js"></script>
+        <script src="<?php echo esc_url( get_template_directory_uri() ) ?>/js/jquery.min.js"></script>
+        <script src="<?php echo esc_url( get_template_directory_uri() ) ?>/js/jquery.dropotron.min.js"></script>
+        <script src="<?php echo esc_url( get_template_directory_uri() ) ?>/js/skel.min.js"></script>
+        <script src="<?php echo esc_url( get_template_directory_uri() ) ?>/js/skel-layers.min.js"></script>
+        <script src="<?php echo esc_url( get_template_directory_uri() ) ?>/js/init.js"></script>
 
-        <script src="<?php bloginfo( 'template_directory' ) ?>/js/imagelightbox.js"></script>
+        <script src="<?php echo esc_url( get_template_directory_uri() ) ?>/js/imagelightbox.js"></script>
 
         <noscript>
-            <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/skel.css" />
-            <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/style.css" />
+            <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ) ?>/css/skel.css" />
+            <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ) ?>/css/style.css" />
         </noscript>
 
-        <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/custom.css" />
-        <!--[if lte IE 8]><link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/css/ie/v8.css" /><![endif]-->
+        <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ) ?>/css/custom.css" />
+        <!--[if lte IE 8]><link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ) ?>/css/ie/v8.css" /><![endif]-->
 
         <?php wp_head(); ?>
     </head>
