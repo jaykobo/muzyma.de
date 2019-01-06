@@ -35,8 +35,7 @@
                     <section>
                         <?php $fields = get_field('productimg_group'); ?>
 
-                        <?php if( $fields )
-                        { ?>
+                        <?php if ($fields['productimg_01']) { ?>
                             <header>
                                 <h3>Weitere Bilder:</h3>
                             </header>
@@ -62,8 +61,8 @@
                                 <?php }
                                 $i++;
                             }
-                        }
-                        ?>
+                        } ?>
+
                         <ul class="actions">
                             <li><a href="#footer-wrapper" class="button scrolly">Die möchte ich gerne haben!</a></li>
                         </ul>
