@@ -2,7 +2,7 @@
 
     // Get Post Image
     $main_image       = get_field('product_main_img');
-    
+
     // vars
     $main_image_url   = $main_image['url'];
     $main_image_alt   = acf_image_fallback_alt($main_image); // grab image alt
@@ -41,17 +41,20 @@
                                 <h3>Weitere Bilder:</h3>
                             </header>
                         <?php
+                        $i = 1;
                         foreach($fields as $field)
                             {
                                 $product_image_thumbnail = $field['sizes']['post-thumbnail'];
                                 $product_image           = $field['sizes']['large'];
-                                $product_image_alt       = $field['alt'];
+                                // $product_image_alt       = $field['alt'];
+                                $product_image_alt       = acf_image_fallback_alt($field);
 
                                 if ($field) { ?>
                                     <a href="<?php echo $product_image; ?>" class="image featured lightbox">
-                                        <img src="<?php echo $product_image_thumbnail; ?>" <?php if ($product_image_alt) { echo 'alt="'.$product_image_alt.'"'; } ?> />
+                                        <img src="<?php echo $product_image_thumbnail; ?>" <?php if ($product_image_alt) { echo 'alt="'.$product_image_alt.' 0'.$i.'"'; } ?> />
                                     </a>
                                 <?php }
+                                $i++;
                             }
                         }
                         ?>
@@ -60,7 +63,7 @@
                         </ul>
                     </section>
                 </section>
-        
+
         </section>
     </div>
 </article>

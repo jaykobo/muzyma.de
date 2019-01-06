@@ -25,7 +25,7 @@ if ( ! function_exists( 'acf_image_fallback_alt' ) ) {
             }
 
             // Generate fallback text
-            $fallback_alt = $post_type_name . ' Modell: ' . $title;
+            $fallback_alt = $post_type_name . ' ' . $title;
 
             return $fallback_alt;
         }
