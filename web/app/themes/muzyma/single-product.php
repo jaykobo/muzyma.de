@@ -16,9 +16,12 @@
 
 <?php
     // Getting the post type of the current post
-    $current_post_type      = get_post_type_object(get_post_type($post->ID));
-    $current_post_type_slug = $current_post_type->rewrite['slug'];
-    $parent_page_url        = home_url().'/'.$current_post_type_slug;
+    $current_post_type_object = get_post_type_object(get_post_type($post->ID));
+    $current_post_type_name   = get_post_type();
+    $strip_slug_to_url        = str_replace('p-', '', $current_post_type_name);
+    $parent_page_url          = home_url('/').'handgemacht-'.$strip_slug_to_url;
+
+    var_dump($strip_slug_to_url);
 ?>
 
 <div class="wrapper dark style1 link-back">

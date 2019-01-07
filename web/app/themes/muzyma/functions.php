@@ -421,7 +421,7 @@ function mp_cpt_strickmuetzen() {
         'not_found_in_trash'    => 'Keine Strickmützen im Papierkorb gefunden',
     );
     $rewrite = array(
-        'slug'                  => 'strickmuetzen',
+        'slug'                  => 'strickmuetze',
         'with_front'            => false,
     );
     $args = array(
@@ -474,7 +474,7 @@ function mp_cpt_genaehte_muetzen() {
         'not_found_in_trash'    => 'Keine genähte Mützen im Papierkorb gefunden',
     );
     $rewrite = array(
-        'slug'                  => 'genaehte-muetzen',
+        'slug'                  => 'genaehte-muetze',
         'with_front'            => false,
     );
     $args = array(
@@ -527,7 +527,7 @@ function mp_cpt_haekelmuetzen() {
         'not_found_in_trash'    => 'Keine Häkelmützen im Papierkorb gefunden',
     );
     $rewrite = array(
-        'slug'                  => 'haekelmuetzen',
+        'slug'                  => 'haekelmuetze',
         'with_front'            => false,
     );
     $args = array(

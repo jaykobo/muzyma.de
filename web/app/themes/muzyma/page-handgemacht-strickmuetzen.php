@@ -2,7 +2,7 @@
 
 <div class="wrapper site-content">
     <div class="container" id="main">
-        <mark>Inhalt: page-genaehte-muetzen.php</mark>
+        <mark>Inhalt: page-<?php echo get_query_var('pagename');?>.php</mark>
 
         <?php get_template_part( 'template_parts/content','page-productlist' ); ?>
 
@@ -13,7 +13,7 @@
             $offset          = ($paged - 1) * $number_of_posts;
 
             $args = array(
-                'post_type'      => 'p-genaehte-muetzen',
+                'post_type'      => 'p-strickmuetzen',
                 'posts_per_page' => $number_of_posts,
                 'offset'         => $offset,
                 'paged'          => $paged
@@ -30,7 +30,7 @@
             <?php } ?>
 
             <?php get_template_part( 'template_parts/content', 'product-loop' ); ?>
-        
+
 
             <?php
                 $i++;

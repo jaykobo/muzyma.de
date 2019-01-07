@@ -45,11 +45,9 @@
                             {
                                 $product_image_thumbnail = $field['sizes']['post-thumbnail'];
                                 $product_image           = $field['sizes']['large'];
-                                // $product_image_alt       = $field['alt'];
                                 $product_image_alt       = acf_image_fallback_alt($field);
                                 $product_image_caption   = $field['caption'];
 
-                                // var_dump($field);
                                 if ($field) { ?>
                                     <a href="<?php echo $product_image; ?>" class="image <?php if (!$product_image_caption) { echo 'featured'; }; ?> lightbox">
                                         <img src="<?php echo $product_image_thumbnail; ?>" <?php if ($product_image_alt) { echo 'alt="'.$product_image_alt.' 0'.$i.'"'; } ?> />
