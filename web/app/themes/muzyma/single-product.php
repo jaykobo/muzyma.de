@@ -20,8 +20,6 @@
     $current_post_type_name   = get_post_type();
     $strip_slug_to_url        = str_replace('p-', '', $current_post_type_name);
     $parent_page_url          = home_url('/').'handgemacht-'.$strip_slug_to_url;
-
-    var_dump($strip_slug_to_url);
 ?>
 
 <div class="wrapper dark style1 link-back">
