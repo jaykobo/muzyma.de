@@ -129,6 +129,39 @@ function my_post_gallery($output, $attr) {
 
 
 
+/*
+ * SHORTCODE
+ * to calculate given year (of birth)
+ *
+ * @author Jakob Neumann
+*/
+
+// Add Shortcode
+function calc_age( $atts ) {
+
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'geburtsjahr' => '',
+		),
+		$atts,
+		'Alter'
+	);
+
+	    // Config
+	    $year          = date('Y');
+	    $year_of_birth = $atts['geburtsjahr'];
+
+	    // Calculate
+	    $age = $year - $year_of_birth;
+
+	    // Return cloaked email
+	    return $age;
+
+}
+add_shortcode( 'Alter', 'calc_age' );
+
+
 
 // ================================================================================================
 // CUSTOMIZE THE_EXCERPT FUNCTION
