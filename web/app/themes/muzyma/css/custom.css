@@ -82,13 +82,14 @@
     .responsive-video
     {
         position: relative;
-        padding-bottom: 56.85%; /* Default for 1600x900 videos 16:9 ratio*/
+        padding-bottom: 56.25%; /* Default for 1600x900 videos 16:9 ratio*/
         padding-top: 0px;
         height: 0;
         overflow: hidden;
-        margin-bottom: 10px;
+        margin-bottom: 1.5em;
     }
-    .responsive-video iframe
+    .responsive-video iframe,
+    .responsive-video embed
     {
         position: absolute;
         top: 0;
@@ -506,6 +507,14 @@ nav.breadcrumb a {
             columns: 3;
 }
 
+@media screen and (max-width: 480px) {
+    .multicolumn.columns-2,
+    .multicolumn.columns-3 {
+        -webkit-columns: unset;
+           -moz-columns: unset;
+                columns: unset;
+    }
+}
 
 
 /*********************************************************************************/
@@ -520,6 +529,11 @@ nav.breadcrumb a {
     margin: 0 20px;
 }
 
+@media screen and (max-width: 480px) {
+    .pagination.align-center a {
+        margin: 0;
+    }
+}
 
 
 /*********************************************************************************/

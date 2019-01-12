@@ -161,6 +161,39 @@ function calc_age( $atts ) {
 }
 add_shortcode( 'Alter', 'calc_age' );
 
+/*
+ * REMOVE P TAGS FROM IFRAMES.
+ *
+ * From: https://wordpress.stackexchange.com/questions/239452/removing-p-tags-around-img-iframes-and-also-scripts/239457#239457
+*/
+function remove_ptags_around_iframe( $content ) {
+    $content = preg_replace('/<p>\s*(<iframe.*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
+    return $content;
+}
+add_filter( 'the_content', 'remove_ptags_around_iframe' );
+
+
+/*
+ * WRAP IFRAME OR EMBED WITH DIV
+ * to make videos responsive
+ *
+ * From: https://marctroendle.de/blog/responsive-videos/
+*/
+
+function responsive_video_wrap( $content ) {
+    $pattern = '~<iframe.*</iframe>|<embed.*</embed>~';
+    preg_match_all($pattern, $content, $matches);
+
+    foreach ($matches[0] as $match) {
+        $wrappedframe = '<div class="responsive-video">' . $match . '</div>';
+        $content = str_replace($match, $wrappedframe, $content);
+    }
+
+    return $content;
+}
+add_filter('the_content', 'responsive_video_wrap');
+
+
 
 
 // ================================================================================================
