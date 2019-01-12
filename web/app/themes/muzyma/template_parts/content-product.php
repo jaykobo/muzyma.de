@@ -4,7 +4,7 @@
     $main_image       = get_field('product_main_img');
 
     // vars
-    $main_image_url   = $main_image['url'];
+    // $main_image_url   = $main_image['url'];
     $main_image_alt   = acf_image_fallback_alt($main_image); // grab image alt
     $main_image_large = $main_image['sizes'][ 'large' ];
 
@@ -22,7 +22,7 @@
 
     <div class="row oneandhalf">
         <section class="8u">
-            <a href="<?php echo $main_image_url; ?>" class="image featured lightbox">
+            <a href="<?php echo $main_image_large; ?>" class="image featured lightbox">
                 <img src="<?php echo $main_image_large; ?>" alt="<?php echo $main_image_alt; ?>">
             </a>
 
