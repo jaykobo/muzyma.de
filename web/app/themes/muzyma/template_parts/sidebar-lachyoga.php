@@ -3,12 +3,12 @@
     <?php
 
         $args = array(
-            'category_name'  => 'lachyoga',
+            'category_name'  => 'lachyoga-news',
             'post_type'      => 'any',
             'order'          => 'ASC',
             'orderby'        => 'date',
             'posts_per_page' => 4,
-        );        
+        );
 
         $loop_sidebar = new WP_Query($args);
 
