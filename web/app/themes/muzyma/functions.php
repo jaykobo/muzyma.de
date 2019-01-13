@@ -209,21 +209,21 @@ add_filter('the_content', 'responsive_video_wrap');
 
 function mp_customizer_register( $wp_customize ) {
 
-	$wp_customize->add_panel( 'footer_panel_id', array(
+	// $wp_customize->add_panel( 'footer_panel_id', array(
+	//     'priority'       => 500,
+	//     'capability'     => 'edit_theme_options',
+	//     'theme_supports' => '',
+	//     'title'          => 'Footer',
+	//     'description'    => 'Description of what this panel does.',
+	// ) );
+
+	$wp_customize->add_section( 'footer_content_section_id', array(
 	    'priority'       => 500,
 	    'capability'     => 'edit_theme_options',
 	    'theme_supports' => '',
-	    'title'          => __( 'Footer', 'textdomain' ),
-	    'description'    => __( 'Description of what this panel does.', 'textdomain' ),
-	) );
-
-	$wp_customize->add_section( 'footer_content_section_id', array(
-	    'priority'       => 10,
-	    'capability'     => 'edit_theme_options',
-	    'theme_supports' => '',
-	    'title'          => __( 'Headline, Text, Copyright', 'textdomain' ),
-	    'description'    => '',
-	    'panel'          => 'footer_panel_id',
+	    'title'          => 'Footer Block',
+	    'description'    => 'Mit diesen Eingabefeldern lassen sich die Textinhalte im Footer anpassen. Die Eingabe ist optional. Werden die Felder leer gelassen, wird ein definierter Standardinhalt ausgegeben.',
+	    // 'panel'          => 'footer_panel_id',
 	) );
 
     // Add Headline
@@ -238,7 +238,7 @@ function mp_customizer_register( $wp_customize ) {
 	    'type'        => 'text',
 	    'priority'    => 10,
 	    'section'     => 'footer_content_section_id',
-	    'label'       => __( 'Überschrift', 'textdomain' ),
+	    'label'       => 'Überschrift',
 	    'description' => '',
 	) );
 
@@ -254,8 +254,8 @@ function mp_customizer_register( $wp_customize ) {
 	    'type'        => 'textarea',
 	    'priority'    => 10,
 	    'section'     => 'footer_content_section_id',
-	    'label'       => __( 'Text', 'textdomain' ),
-	    'description' => 'Text unterhalb der Überschrift',
+	    'label'       => 'Text',
+	    'description' => 'Absatz unterhalb der Überschrift',
     ) );
 
     // Add Copyright
@@ -270,7 +270,7 @@ function mp_customizer_register( $wp_customize ) {
 	    'type'        => 'text',
 	    'priority'    => 10,
 	    'section'     => 'footer_content_section_id',
-	    'label'       => __( 'Copyright Text', 'textdomain' ),
+	    'label'       => 'Copyright Text',
 	    'description' => 'Unterhalb des Kontaktformulars',
 	) );
 
