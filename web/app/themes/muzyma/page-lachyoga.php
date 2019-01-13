@@ -2,6 +2,8 @@
 
 <div class="wrapper site-content">
     <div class="container" id="main">
+        <mark>Inhalt: page-<?php echo get_query_var('pagename');?>.php</mark>
+
         <div class="row oneandhalf">
             <div class="8u">
 
