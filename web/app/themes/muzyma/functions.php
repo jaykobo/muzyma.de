@@ -130,36 +130,39 @@ function my_post_gallery($output, $attr) {
 
 
 /*
- * SHORTCODE
+ * ADD SHORTCODE
  * to calculate given year (of birth)
  *
  * @author Jakob Neumann
 */
 
-// Add Shortcode
 function calc_age( $atts ) {
 
-	// Attributes
-	$atts = shortcode_atts(
-		array(
-			'geburtsjahr' => '',
-		),
-		$atts,
-		'Alter'
-	);
+    // Attributes
+    $atts = shortcode_atts(
+        array(
+            'geburtsjahr' => '',
+        ),
+        $atts,
+        'Alter'
+    );
 
-	    // Config
-	    $year          = date('Y');
-	    $year_of_birth = $atts['geburtsjahr'];
+        // Config
+        $year          = date('Y');
+        $year_of_birth = $atts['geburtsjahr'];
 
-	    // Calculate
-	    $age = $year - $year_of_birth;
+        // Calculate
+        $age = $year - $year_of_birth;
 
-	    // Return cloaked email
-	    return $age;
+        // Return cloaked email
+        return $age;
 
 }
 add_shortcode( 'Alter', 'calc_age' );
+
+
+
+
 
 /*
  * REMOVE P TAGS FROM IFRAMES.
@@ -192,6 +195,91 @@ function responsive_video_wrap( $content ) {
     return $content;
 }
 add_filter('the_content', 'responsive_video_wrap');
+
+
+
+
+
+/*
+ * REGISTER CUSTOMIZER - EXTRA TEXTBOX
+ * for Footer Text Input
+ *
+ * From: https://wptheming.com/2014/09/customizer-panels-field-types/
+*/
+
+function mp_customizer_register( $wp_customize ) {
+
+	$wp_customize->add_panel( 'footer_panel_id', array(
+	    'priority'       => 500,
+	    'capability'     => 'edit_theme_options',
+	    'theme_supports' => '',
+	    'title'          => __( 'Footer', 'textdomain' ),
+	    'description'    => __( 'Description of what this panel does.', 'textdomain' ),
+	) );
+
+	$wp_customize->add_section( 'footer_content_section_id', array(
+	    'priority'       => 10,
+	    'capability'     => 'edit_theme_options',
+	    'theme_supports' => '',
+	    'title'          => __( 'Headline, Text, Copyright', 'textdomain' ),
+	    'description'    => '',
+	    'panel'          => 'footer_panel_id',
+	) );
+
+    // Add Headline
+	$wp_customize->add_setting( 'footer_headline_field_id', array(
+		'default'           => '',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'transport'         => '',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+	$wp_customize->add_control( 'footer_headline_field_id', array(
+	    'type'        => 'text',
+	    'priority'    => 10,
+	    'section'     => 'footer_content_section_id',
+	    'label'       => __( 'Überschrift', 'textdomain' ),
+	    'description' => '',
+	) );
+
+    // Add Textarea
+	$wp_customize->add_setting( 'footer_textarea_field_id', array(
+		'default'           => '',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'transport'         => '',
+		'sanitize_callback' => 'esc_textarea',
+	) );
+	$wp_customize->add_control( 'footer_textarea_field_id', array(
+	    'type'        => 'textarea',
+	    'priority'    => 10,
+	    'section'     => 'footer_content_section_id',
+	    'label'       => __( 'Text', 'textdomain' ),
+	    'description' => 'Text unterhalb der Überschrift',
+    ) );
+
+    // Add Copyright
+	$wp_customize->add_setting( 'footer_copyright_field_id', array(
+		'default'           => '',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'transport'         => '',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+	$wp_customize->add_control( 'footer_copyright_field_id', array(
+	    'type'        => 'text',
+	    'priority'    => 10,
+	    'section'     => 'footer_content_section_id',
+	    'label'       => __( 'Copyright Text', 'textdomain' ),
+	    'description' => 'Unterhalb des Kontaktformulars',
+	) );
+
+
+}
+add_action( 'customize_register', 'mp_customizer_register' );
+
+
+
 
 
 
@@ -367,7 +455,7 @@ add_action( 'admin_head', 'mp_custom_editor_stylesheet' );
 // Register Theme Features
 function mp_theme_features()  {
 
-// THEME SUPPORT:
+    // THEME SUPPORT:
 
     // Add theme support for Post Formats
     add_theme_support( 'post-formats', array( 'video' ) );
@@ -382,7 +470,7 @@ function mp_theme_features()  {
     add_theme_support( 'title-tag' );
 
 
-// CUSTOM IMAGE OPTIONS / SIZES:
+    // CUSTOM IMAGE OPTIONS / SIZES:
 
     // Reduce jpg quality
     add_filter('jpeg_quality', function( $arg ){ return 85; });
@@ -853,7 +941,7 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
 /**
 * Dequeue jQuery Migrate Script in WordPress.
 */
-if ( ! function_exists( 'evolution_remove_jquery_migrate' ) ) :
+if ( ! function_exists( 'evolution_remove_jquery_migrate' ) ) {
 
     function evolution_remove_jquery_migrate( &$scripts) {
         if(!is_admin()) {
@@ -862,7 +950,7 @@ if ( ! function_exists( 'evolution_remove_jquery_migrate' ) ) :
         }
     }
     add_filter( 'wp_default_scripts', 'evolution_remove_jquery_migrate' );
-endif;
+}
 
 
 
@@ -907,8 +995,8 @@ function evolution_disable_embeds_init() {
     // Remove filter of the oEmbed result before any HTTP requests are made.
     remove_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result', 10 );
 }
-
 add_action( 'init', 'evolution_disable_embeds_init', 9999 );
+
 
 /**
  * Removes the 'wpembed' TinyMCE plugin.
@@ -955,6 +1043,7 @@ function evolution_disable_embeds_remove_rewrite_rules() {
 register_activation_hook( __FILE__, 'evolution_disable_embeds_remove_rewrite_rules' );
 
 
+
 /**
  * Flush rewrite rules on plugin deactivation.
  *
@@ -969,13 +1058,10 @@ register_deactivation_hook( __FILE__, 'evolution_disable_embeds_flush_rewrite_ru
 
 
 
-
 /**
  * Befreit den Header von unnötigen Einträgen
  */
-add_action('init', 'evolution_remheadlink');
-function evolution_remheadlink()
-{
+function evolution_remheadlink() {
     remove_action('wp_head', 'rsd_link');
     remove_action('wp_head', 'wp_generator');
     remove_action('wp_head', 'index_rel_link');
@@ -988,5 +1074,6 @@ function evolution_remheadlink()
     remove_action('wp_head', 'wp_shortlink_header', 10, 0);
     remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 }
+add_action('init', 'evolution_remheadlink');
 
 ?>
