@@ -37,7 +37,7 @@
                 <?php } ?>
 
                 <?php get_template_part( 'template_parts/content', 'poesie-loop' ); ?>
-            
+
 
                 <?php
                     $i++;
@@ -52,11 +52,11 @@
             <?php if($i > 0) { ?>
                 </div>
             <?php } ?>
-        
+
         </div>
 
             <?php if ( $products->max_num_pages > 1 ) : ?>
-                <div class="pagination align-center">
+                <div class="page-prev-next align-center">
                     <?php previous_posts_link('« Vorherige Seite', $products->max_num_pages);?>
                     <?php next_posts_link('Nächste Seite »', $products->max_num_pages);?>
                 </div>
