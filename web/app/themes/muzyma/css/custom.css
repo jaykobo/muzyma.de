@@ -446,19 +446,25 @@ nav.breadcrumb a {
 
 
 /*********************************************************************************/
-/* Poesie                                                                        */
+/* Posts Grid                                                                    */
 /*********************************************************************************/
 
-#poesie ul.actions
+#poesie ul.actions,
+#category ul.actions
 {
     padding-bottom: 60px;
     padding-top: 0;
 }
 
-#poesie .grid .row:not(:last-child) ul.actions
+#poesie .grid .row:not(:last-child) ul.actions,
+#category .grid .row:not(:last-child) ul.actions
 {
     border-bottom: 1px solid #dcddde;
 }
+
+/*********************************************************************************/
+/* Poesie                                                                        */
+/*********************************************************************************/
 
 #poesie header h3 {
     text-overflow: ellipsis;
@@ -522,15 +528,65 @@ nav.breadcrumb a {
 /*********************************************************************************/
 
 .pagination {
+    text-align: center;
+    margin: 0 0 2em 0;
+}
+
+.pagination .screen-reader-text {
+    display: none;
+}
+
+.pagination ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+.pagination ul li {
+    flex: 1;
+    margin: 4px;
+}
+
+.pagination a.page-numbers,
+.pagination span.page-numbers {
+    display: block;
+    padding: 0.75em 1em;
+    border: solid 1px #c2c7cc;
+    border-radius: 0.25em;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.pagination span.page-numbers.dots {
+    border: none;
+}
+
+.pagination ul li span.current {
+    background: #3d3d3d;
+    border-color: #3d3d3d;
+    color: #fff
+}
+
+.pagination ul li a:hover {
+    color: #f35858;
+    border-color: rgba(243,88,88,0.5);
+}
+
+/*********************************************************************************/
+/* Page Prev / Next                                                              */
+/*********************************************************************************/
+
+.page-prev-next {
     padding-top: 30px;
 }
 
-.pagination.align-center a {
+.page-prev-next.align-center a {
     margin: 0 20px;
 }
 
 @media screen and (max-width: 480px) {
-    .pagination.align-center a {
+    .page-prev-next.align-center a {
         margin: 0;
     }
 }
