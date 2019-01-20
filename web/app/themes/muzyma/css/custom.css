@@ -487,6 +487,79 @@ nav.breadcrumb a {
 
 
 /*********************************************************************************/
+/* Category Page                                                                 */
+/*********************************************************************************/
+
+/* Header */
+.overview-title {
+    margin-bottom: 2em;
+}
+
+.overview-title h2 {
+    font-weight: 600;
+}
+
+.overview-title h2 + hr {
+    padding-top: 1em;
+}
+
+.overview-title hr {
+    border-top: none;
+    border-bottom: 1px solid #dcddde;
+}
+
+
+/* Article */
+.category article {
+    padding-bottom: 3em;
+}
+
+.category article:after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.category article:not(:last-of-type) {
+    border-bottom: 1px solid #dcddde;
+}
+
+.category article header {
+    margin-bottom: 0.5em;
+}
+.category article header h3 {
+    font-weight: 400;
+}
+
+.category article header h3 a {
+    border-color: transparent;
+}
+.category article header h3 a:hover,
+.category article header h3 a:focus {
+    border-color: #62676c;
+}
+
+
+/* Post Meta */
+.post-meta {
+    font-size: 0.85em;
+    line-height: 1.5;
+    color: #888;
+    margin-bottom: 0.5em;
+}
+
+/* Post Image */
+.single-thumbnail {
+    float: left;
+    width: 180px;
+    height: 180px;
+    max-width: 180px;
+    max-height: 180px;
+    margin: 0.25em 1.25em 1.25em 0;
+}
+
+
+/*********************************************************************************/
 /* Multicolumn                                                                   */
 /*********************************************************************************/
 
@@ -529,7 +602,6 @@ nav.breadcrumb a {
 
 .pagination {
     text-align: center;
-    margin: 0 0 2em 0;
 }
 
 .pagination .screen-reader-text {
