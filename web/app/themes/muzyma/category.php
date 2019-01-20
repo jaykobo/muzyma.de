@@ -38,8 +38,7 @@
             </div>
 
             <section class="4u">
-            Sidebar
-                <?php // get_template_part( 'template_parts/sidebar','archive' ); ?>
+                <?php get_template_part( 'template_parts/sidebar','archive' ); ?>
             </section>
         </div>
     </div>
