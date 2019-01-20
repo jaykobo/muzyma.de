@@ -6,14 +6,16 @@
 
         <div class="row oneandhalf">
             <div class="8u">
-                <header>
+                <header class="overview-title">
                     <h2><?php single_cat_title(); ?></h2>
                     <?php if( category_description() ): ?>
                         <?php echo category_description(); ?>
                     <?php endif; ?>
+                    <hr>
                 </header>
 
                 <?php
+                    // Pagination Options:
                     $args =  array(
                         'mid_size'  => 2,
                         'prev_next' => true,
@@ -24,14 +26,14 @@
                 ?>
 
 
-                <div class="row">
-                <?php  if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                    <?php  get_template_part( 'template_parts/content','posts-loop' ); ?>
-                <?php  endwhile; ?>
-                </div>
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <?php get_template_part( 'template_parts/content','posts-loop' ); ?>
+                <?php endwhile; ?>
+
                     <?php the_posts_pagination( $args ); ?>
+
                 <?php else : ?>
-                    <?php  get_template_part( 'template_parts/content','error' ); ?>
+                    <?php get_template_part( 'template_parts/content','error' ); ?>
                 <?php endif; ?>
             </div>
 
