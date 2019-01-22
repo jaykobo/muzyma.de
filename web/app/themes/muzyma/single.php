@@ -3,12 +3,20 @@
 <div class="wrapper site-content">
     <div class="container" id="main">
         <mark>Inhalt: single.php</mark>
-        
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <?php get_template_part( 'template_parts/content','page' ); ?>
-        <?php endwhile; else : ?>
-            <?php get_template_part( 'template_parts/content','error' ); ?>
-        <?php endif; ?>
+
+        <div class="row oneandhalf">
+            <div class="8u">
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <?php get_template_part( 'template_parts/content','page' ); ?>
+                <?php endwhile; else : ?>
+                    <?php get_template_part( 'template_parts/content','error' ); ?>
+                <?php endif; ?>
+            </div>
+
+            <section class="4u">
+                <?php get_template_part( 'template_parts/sidebar','archive' ); ?>
+            </section>
+        </div>
 
     </div>
 </div>

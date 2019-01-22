@@ -31,5 +31,5 @@
     <p><?php if( get_field('subtitel') ): ?><strong><?php echo get_field('subtitel'); ?></strong> <?php endif;
         echo get_the_excerpt(); ?>
     </p>
-    <p><a href="<?php the_permalink(); ?>" class="button">Artikel weiterlesen &raquo;</a></p>
+    <p><a href="<?php the_permalink(); ?>" class="button">Beitrag weiterlesen &raquo;</a></p>
 </article>

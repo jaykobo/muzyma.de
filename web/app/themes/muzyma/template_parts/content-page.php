@@ -2,8 +2,20 @@
     <mark>template parts: content-page.php</mark>
     <header>
         <h2><?php the_title(); ?></h2>
+
         <?php if( get_field('subtitel') ): ?>
             <p><?php the_field('subtitel'); ?></p>
+        <?php endif; ?>
+
+        <?php if( is_single() ): ?>
+            <div class="post-meta">
+                <?php
+                    if ( get_the_date( 'U' ) !== get_the_modified_date( 'U' ) ) { ?>
+                        Zuletzt aktualisiert am <time datetime="<?php the_modified_time('c')?>" itemprop="dateModified"><?php echo get_the_modified_date(); ?></time>
+                    <?php } else { ?>
+                        Veröffentlicht am <time datetime="<?php the_time('c')?>" itemprop="datePublished"><?php echo get_the_date('j. F Y'); ?></time>
+                <?php } ?>
+            </div>
         <?php endif; ?>
     </header>
     <?php
