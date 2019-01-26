@@ -1,5 +1,5 @@
 <mark>template parts: sidebar-archive.php</mark>
-<section id="sidebar">
+<section id="sidebar" class="sidebar-archive">
     <section>
         <header>
             <h3>Letzte Beiträge</h3>

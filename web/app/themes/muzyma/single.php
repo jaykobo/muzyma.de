@@ -1,8 +1,27 @@
 <?php get_header(); ?>
 
+<?php
+    // Get category name and url for breadcrumb
+    $category = get_the_category();
+
+    if ( !empty ( $category ) ) {
+        $category_id   = $category[0]->cat_ID;
+        $category_name = $category[0]->cat_name;
+        $category_url  = get_category_link( $category_id );
+    }
+?>
+
+<div class="wrapper breadcrumb">
+    <div class="container">
+        <nav class="breadcrumb">
+        « <a href="<?php echo $category_url; ?>"><?php echo $category_name; ?></a>
+        </nav>
+    </div>
+</div>
+
 <div class="wrapper site-content">
     <div class="container" id="main">
-        <mark>Inhalt: single.php</mark>
+        <!-- <mark>Inhalt: single.php</mark> -->
 
         <div class="row oneandhalf">
             <div class="8u">
