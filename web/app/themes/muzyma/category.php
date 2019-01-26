@@ -20,7 +20,7 @@
                         'mid_size'  => 2,
                         'prev_next' => true,
                         'prev_text' => '‹&nbsp;Zurück',
-                        'next_text' => 'Vorwärts&nbsp;›',
+                        'next_text' => 'Weiter&nbsp;›',
                         'type'      => 'list',
                     );
                 ?>
