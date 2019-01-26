@@ -35,7 +35,6 @@
 	{
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: 300;
-		/*color: #52575c;*/
 		color: #000;
 		line-height: 1.75em;
 		font-size: 15pt;
@@ -554,8 +553,7 @@
 		position: relative;
 		background: #fff;
 		overflow-x: hidden;
-		/* [disabled] padding: 6em 0 6em 0; */
-		padding:5em 0 5em 0;
+		padding: 5em 0 5em 0;
 	}
 
 	/* CAN BE DELETED */
