@@ -63,37 +63,20 @@
                             var
 
                                 // ACTIVITY INDICATOR
-                                activityIndicatorOn = function()
-                                {
-                                    $( '<div id="imagelightbox-loading"><div></div></div>' ).appendTo( 'body' );
-                                },
-                                activityIndicatorOff = function()
-                                {
-                                    $( '#imagelightbox-loading' ).remove();
-                                },
-
+                                activityIndicatorOn  = function() { $( '<div id="imagelightbox-loading"><div></div></div>' ).appendTo( 'body' ); },
+                                activityIndicatorOff = function() { $( '#imagelightbox-loading' ).remove(); },
 
                                 // OVERLAY
-                                overlayOn = function()
-                                {
-                                    $( '<div id="imagelightbox-overlay"></div>' ).appendTo( 'body' );
-                                },
-                                overlayOff = function()
-                                {
-                                    $( '#imagelightbox-overlay' ).remove();
-                                },
+                                overlayOn  = function() { $( '<div id="imagelightbox-overlay"></div>' ).appendTo( 'body' ); },
+                                overlayOff = function() { $( '#imagelightbox-overlay' ).remove(); },
 
                                 // CAPTION
-                                captionOn = function()
-                                {
+                                captionOn = function() {
                                     var description = $( 'a[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"] img' ).attr( 'alt' );
                                     if( description.length > 0 )
                                         $( '<div id="imagelightbox-caption">' + description + '</div>' ).appendTo( 'body' );
                                 },
-                                captionOff = function()
-                                {
-                                    $( '#imagelightbox-caption' ).remove();
-                                };
+                                captionOff = function() { $( '#imagelightbox-caption' ).remove(); };
 
 
                             //  WITH OVERLAY & CAPTION & ACTIVITY INDICATION
@@ -108,35 +91,21 @@
 
                         });
                     </script>
+
             <?php } elseif ( is_singular( array( 'p-strickmuetzen', 'p-genaehte-muetzen', 'p-haekelmuetzen', 'p-yogakissen' ) ) ) { ?>
                     <script>
                         $( function()
                         {
                             var
-
                                 // ACTIVITY INDICATOR
-                                activityIndicatorOn = function()
-                                {
-                                    $( '<div id="imagelightbox-loading"><div></div></div>' ).appendTo( 'body' );
-                                },
-                                activityIndicatorOff = function()
-                                {
-                                    $( '#imagelightbox-loading' ).remove();
-                                },
-
+                                activityIndicatorOn  = function() { $( '<div id="imagelightbox-loading"><div></div></div>' ).appendTo( 'body' ); },
+                                activityIndicatorOff = function() { $( '#imagelightbox-loading' ).remove(); },
 
                                 // OVERLAY
-                                overlayOn = function()
-                                {
-                                    $( '<div id="imagelightbox-overlay"></div>' ).appendTo( 'body' );
-                                },
-                                overlayOff = function()
-                                {
-                                    $( '#imagelightbox-overlay' ).remove();
-                                };
+                                overlayOn  = function() { $( '<div id="imagelightbox-overlay"></div>' ).appendTo( 'body' ); },
+                                overlayOff = function() { $( '#imagelightbox-overlay' ).remove(); };
 
-                            //  WITH OVERLAY & CAPTION & ACTIVITY INDICATION
-
+                            //  WITH OVERLAY & ACTIVITY INDICATION
                             $( 'a.lightbox' ).imageLightbox(
                             {
                                 onStart:     function() { overlayOn(); },
