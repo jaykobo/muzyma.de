@@ -86,6 +86,36 @@
 
     });
 
+    // INIT GLOBAL LIGHTBOX
+    $(function () {
+        var
+            // ACTIVITY INDICATOR
+            activityIndicatorOn  = function () { $('<div id="imagelightbox-loading"><div></div></div>').appendTo('body'); },
+            activityIndicatorOff = function () { $('#imagelightbox-loading').remove(); },
+
+            // OVERLAY
+            overlayOn  = function () { $('<div id="imagelightbox-overlay"></div>').appendTo('body'); },
+            overlayOff = function () { $('#imagelightbox-overlay').remove(); };
+
+            // CAPTION
+            captionOn = function() {
+                var description = $( 'a[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"] img' ).attr( 'alt' );
+                if( description.length > 0 )
+                $( '<div id="imagelightbox-caption"><span>' + description + '</span></div>' ).appendTo( 'body' );
+            },
+            captionOff = function() { $( '#imagelightbox-caption' ).remove(); };
+
+        //  WITH OVERLAY & ACTIVITY INDICATION
+        $('a.lightbox, figure.wp-caption a').imageLightbox(
+            {
+                onStart:     function() { overlayOn(); },
+                onEnd:       function() { overlayOff(); captionOff(); activityIndicatorOff(); },
+                onLoadStart: function() { captionOff(); activityIndicatorOn(); },
+                onLoadEnd:   function() { captionOn(); activityIndicatorOff(); }
+            });
+        $('.gallery-item a').imageLightbox().attr('data-imagelightbox', 'gallery');
+    });
+
 })(jQuery);
 
 // scrolly
