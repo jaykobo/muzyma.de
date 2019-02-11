@@ -40,7 +40,7 @@
                                 <h3>Weitere Bilder:</h3>
                             </header>
                         <?php
-                        $i = 1;
+
                         foreach($fields as $field)
                             {
                                 $product_image_thumbnail = $field['sizes']['post-thumbnail'];
@@ -50,14 +50,13 @@
 
                                 if ($field) { ?>
                                     <a href="<?php echo $product_image; ?>" class="image <?php if (!$product_image_caption) { echo 'featured'; }; ?> lightbox">
-                                        <img src="<?php echo $product_image_thumbnail; ?>" <?php if ($product_image_alt) { echo 'alt="'.$product_image_alt.' 0'.$i.'"'; } ?> />
+                                        <img src="<?php echo $product_image_thumbnail; ?>" <?php if ($product_image_alt) { echo 'alt="'.$product_image_alt.'"'; } ?> />
                                     </a>
 
                                 <?php }
                                 if ($product_image_caption) { ?>
                                     <p><?php echo $product_image_caption; ?></p>
                                 <?php }
-                                $i++;
                             }
                         } ?>
 
