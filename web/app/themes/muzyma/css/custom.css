@@ -669,20 +669,32 @@ figure.wp-caption > a:hover:before { opacity: 0.65; }
 
 /* WRAPPER - SITE-CONTENT */
 /* @media default */
-.single.single-post .wrapper.site-content {
+.single.single-post .wrapper.site-content,
+.single.single-p-strickmuetzen .wrapper.site-content,
+.single.single-p-genaehte-muetzen .wrapper.site-content,
+.single.single-p-haekelmuetzen .wrapper.site-content,
+.single.single-p-yogakissen .wrapper.site-content {
     padding-top: 3.25em;
 }
 
     /* @media narrow */
     @media screen and (max-width: 1080px) {
-        .single.single-post .wrapper.site-content {
+        .single.single-post .wrapper.site-content,
+        .single.single-p-strickmuetzen .wrapper.site-content,
+        .single.single-p-genaehte-muetzen .wrapper.site-content,
+        .single.single-p-haekelmuetzen .wrapper.site-content,
+        .single.single-p-yogakissen .wrapper.site-content {
             padding-top: 2.5em;
         }
     }
 
     /* @media narrow */
     @media screen and (max-width: 736px) {
-        .single.single-post .wrapper.site-content {
+        .single.single-post .wrapper.site-content,
+        .single.single-p-strickmuetzen .wrapper.site-content,
+        .single.single-p-genaehte-muetzen .wrapper.site-content,
+        .single.single-p-haekelmuetzen .wrapper.site-content,
+        .single.single-p-yogakissen .wrapper.site-content {
             padding-top: 1.5em;
         }
     }
