@@ -10,9 +10,13 @@ if ( ! function_exists( 'acf_image_fallback_alt' ) ) {
 
     function acf_image_fallback_alt($image) {
         $image_alt = $image['alt'];
+        $image_caption = $image['caption'];
 
+        // Get Image Alt OR Image Caption
         if (!empty($image_alt)) {
             return $image_alt;
+        } elseif (!empty($image_caption)) {
+            return $image_caption;
         } else {
 
             // Get Post Type and the title

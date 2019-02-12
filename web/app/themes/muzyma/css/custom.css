@@ -663,6 +663,8 @@ figure.wp-caption > a:hover:before { opacity: 0.65; }
 
 /*********************************************************************************/
 /* Single Page                                                                   */
+/*                                                                               */
+/* EDIT PADDINGS TO HAVE SAME SPACING WITH BREADCRUMB ELEMENT                    */
 /*********************************************************************************/
 
 /* WRAPPER - SITE-CONTENT */
@@ -671,19 +673,19 @@ figure.wp-caption > a:hover:before { opacity: 0.65; }
     padding-top: 3.25em;
 }
 
-/* @media narrow */
-@media screen and (max-width: 1080px) {
-    .single.single-post .wrapper.site-content {
-        padding-top: 2.5em;
+    /* @media narrow */
+    @media screen and (max-width: 1080px) {
+        .single.single-post .wrapper.site-content {
+            padding-top: 2.5em;
+        }
     }
-}
 
-/* @media narrow */
-@media screen and (max-width: 736px) {
-    .single.single-post .wrapper.site-content {
-        padding-top: 1.5em;
+    /* @media narrow */
+    @media screen and (max-width: 736px) {
+        .single.single-post .wrapper.site-content {
+            padding-top: 1.5em;
+        }
     }
-}
 
 
 
@@ -693,6 +695,10 @@ figure.wp-caption > a:hover:before { opacity: 0.65; }
 }
 .single article header p + .post-meta {
     margin-top: -2em;
+}
+
+.single #sidebar .wp-caption-text {
+    margin: 0 0 3em 0;
 }
 
 

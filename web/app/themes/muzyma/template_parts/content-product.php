@@ -55,7 +55,7 @@
 
                                 <?php }
                                 if ($product_image_caption) { ?>
-                                    <p><?php echo $product_image_caption; ?></p>
+                                    <figcaption class="wp-caption-text"><?php echo $product_image_caption; ?></figcaption>
                                 <?php }
                             }
                         } ?>
