@@ -40,4 +40,10 @@
     </div>
 </div>
 
+<div class="wrapper dark style1 link-back">
+    <div class="container">
+        <a href="<?php echo $category_url; ?>" class="button">« Zurück zur Übersicht</a>
+    </div>
+</div>
+
 <?php get_footer(); ?>
