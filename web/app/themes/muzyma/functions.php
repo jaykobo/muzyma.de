@@ -4,8 +4,10 @@
 // CUSTOM FUNCTIONS
 // ================================================================================================
 
-
-// Grab ACF image alt-text otherwise use fallback:
+/*
+ * GRAB ACF IMAGE ALT-TEXT OTHERWISE USE FALLBACK
+ *
+*/
 if ( ! function_exists( 'acf_image_fallback_alt' ) ) {
 
     function acf_image_fallback_alt($image) {
@@ -36,7 +38,10 @@ if ( ! function_exists( 'acf_image_fallback_alt' ) ) {
     }
 }
 
-// Add custom class to prev/next links
+/*
+ * Add custom class to prev/next links
+ *
+*/
 add_filter('next_posts_link_attributes', 'posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'posts_link_attributes');
 
