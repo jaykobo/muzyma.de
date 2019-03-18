@@ -231,7 +231,7 @@ nav.breadcrumb a {
 
     /* Button */
 
-        .homepage .button,
+        .homepage .button:not(.light):not(.dark),
         .homepage #hero .button
         {
             color:#fff;
@@ -241,7 +241,7 @@ nav.breadcrumb a {
             border-color: rgba(255,255,255,0.75);
         }
 
-            .homepage .button:hover,
+            .homepage .button:not(.light):not(.dark):hover,
             .homepage #hero .button:hover
             {
                 color: #f35858;
@@ -583,13 +583,21 @@ figure.wp-caption > a:hover:before { opacity: 0.65; }
 }
 
 /* Post Image */
-.category article .single-thumbnail {
+article .single-thumbnail {
     float: left;
     width: 180px;
     height: 180px;
     max-width: 180px;
     max-height: 180px;
     margin: 0.25em 1.25em 1.25em 0;
+}
+
+#latest-news article .single-thumbnail {
+    width: 90px;
+    height: 90px;
+    max-width: 90px;
+    max-height: 90px;
+    margin: 0.25em 1.25em 0.5em 0;
 }
 
 

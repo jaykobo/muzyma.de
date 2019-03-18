@@ -64,6 +64,12 @@
 		line-height: 1.5em;
 	}
 
+	h4
+	{
+		font-size: 1.25em;
+		line-height: 1.25em;
+	}
+
 	a
 	{
 		color: inherit;
