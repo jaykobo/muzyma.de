@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-        
+
 
     <!-- Hero -->
     <section id="hero" class="container">
@@ -129,7 +129,7 @@
                 <?php else: ?>
                     <li><a href="#second" class="button scrolly">Weiter...</a></li>
                 <?php endif; ?>
-                
+
             </ul>
         </section>
 
@@ -166,7 +166,7 @@
                         'order'          => 'DESC',
                         'orderby'        => 'date',
                         'posts_per_page' => 6,
-                    );        
+                    );
                     $strickmuetzen = new WP_Query($args);
                     $i = 0;
                 ?>
@@ -196,7 +196,7 @@
                             <a href="<?php the_permalink(); ?>" class="image fit">
                                 <img src="<?php echo $image_thumbnail; ?>" alt="<?php echo $post_type_name . ': ' . get_the_title(); ?>" />
                             </a>
-                            
+
                         </section>
 
                     <?php
@@ -213,9 +213,9 @@
                     <?php if($i > 0) { ?>
                         </div>
                     <?php } ?>
-                    
+
                 </section>
-                
+
             </div>
         </section>
 
@@ -241,6 +241,54 @@
             <h2><?php the_field('promo_headline'); ?></h2>
         <?php endif; ?>
         <a href="<?php the_field('promo_button_url'); ?>" class="button"><?php the_field('promo_button_text'); ?></a>
+    </section>
+</div>
+
+
+<?php
+    $category_name = 'lachyoga-news';
+    $category_id   = get_cat_ID( $category_name );
+    $category_link = get_category_link( $category_id );
+
+    $args = array(
+        'post_type'      => 'post',
+        'category_name'       => $category_name,
+        'order'          => 'DESC',
+        'orderby'        => 'date',
+        'posts_per_page' => 3,
+    );
+    $news = new WP_Query($args);
+    // $news = get_posts($args);
+
+    var_dump($news);
+?>
+
+<div id="latest-news" class="wrapper">
+    <section class="container">
+        <header class="align-center">
+            <h2><strong><?php echo get_cat_name( $category_id ); ?></strong></h2>
+            <?php
+                if( category_description( $category_id ) ):
+                    echo category_description( $category_id );
+                endif;
+            ?>
+        </header>
+
+        <div class="row features">
+            <?php if ( $news->have_posts() ) : while ( $news->have_posts() ) : $news->the_post(); ?>
+
+            <section class="4u col-12-narrower">
+                <?php get_template_part( 'template_parts/content','posts-latest' ); ?>
+            </section>
+
+            <?php endwhile; else : ?>
+                <?php get_template_part( 'template_parts/content','error' ); ?>
+            <?php endif; wp_reset_postdata(); ?>
+        </div>
+
+        <ul class="actions major">
+            <li><a href="<?php echo esc_url( $category_link ); ?>" class="button dark">Alle Newsbeiträge ansehen »</a></li>
+        </ul>
     </section>
 </div>
 
