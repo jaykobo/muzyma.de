@@ -23,8 +23,8 @@
     ?>
 
     <?php if( has_post_thumbnail() ): ?>
-        <a href="<?php the_permalink(); ?>" class="image single-thumbnail" alt="<?php echo $alt?>">
-            <?php the_post_thumbnail('thumbnail'); ?>
+        <a href="<?php the_permalink(); ?>" class="image single-thumbnail">
+            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?php echo $alt?>" />
         </a>
     <?php endif; ?>
 
