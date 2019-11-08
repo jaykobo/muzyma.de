@@ -246,21 +246,18 @@
 
 
 <?php
-    $category_name = 'lachyoga-news';
+    $category_name = 'lachyoga';
     $category_id   = get_cat_ID( $category_name );
     $category_link = get_category_link( $category_id );
 
     $args = array(
         'post_type'      => 'post',
-        'category_name'       => $category_name,
+        'cat'  => $category_id,
         'order'          => 'DESC',
         'orderby'        => 'date',
         'posts_per_page' => 3,
     );
     $news = new WP_Query($args);
-    // $news = get_posts($args);
-
-    var_dump($news);
 ?>
 
 <div id="latest-news" class="wrapper">
@@ -287,7 +284,7 @@
         </div>
 
         <ul class="actions major">
-            <li><a href="<?php echo esc_url( $category_link ); ?>" class="button dark">Alle Newsbeiträge ansehen »</a></li>
+            <li><a href="<?php echo esc_url( $category_link ); ?>" class="button dark">Alle Beiträge ansehen »</a></li>
         </ul>
     </section>
 </div>
