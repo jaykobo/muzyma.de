@@ -1,3 +1,14 @@
+<?php
+    // Get category name and url
+    $category = get_the_category();
+
+    if ( !empty ( $category ) ) {
+        $category_id   = $category[0]->cat_ID;
+        $category_name = $category[0]->cat_name;
+        $category_url  = get_category_link( $category_id );
+    }
+?>
+
 <article <?php post_class(); ?>>
     <mark>template parts: content-page.php</mark>
     <header>
@@ -14,6 +25,9 @@
                         Zuletzt aktualisiert am <time datetime="<?php the_modified_time('c')?>" itemprop="dateModified"><?php echo get_the_modified_date(); ?></time>
                     <?php } else { ?>
                         Veröffentlicht am <time datetime="<?php the_time('c')?>" itemprop="datePublished"><?php echo get_the_date('j. F Y'); ?></time>
+                <?php } ?>
+                <?php if ( !empty ( $category ) ) { ?>
+                    &nbsp;•&nbsp; <a href="<?php echo $category_url; ?>"><?php echo $category_name; ?></a>
                 <?php } ?>
             </div>
         <?php endif; ?>
