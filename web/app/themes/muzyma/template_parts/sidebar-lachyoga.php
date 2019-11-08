@@ -1,4 +1,13 @@
 <section id="sidebar">
+    <?php
+
+        // Make specific Post sticky in Sidebar
+        global $post;
+        $post = get_post(90);
+        setup_postdata($post);
+        get_template_part( 'template_parts/content', 'sidebar-lachyoga' );  ?>
+
+    <?php wp_reset_postdata(); ?>
 
     <?php
         $category_name = 'Lachyoga';
@@ -16,9 +25,9 @@
         $args = array(
             'category_name'  => $category_slug,
             'post_type'      => 'any',
-            'order'          => 'ASC',
+            'order'          => 'DESC',
             'orderby'        => 'date',
-            'posts_per_page' => 4,
+            'posts_per_page' => 3,
         );
 
         $loop_sidebar = new WP_Query($args);
@@ -30,7 +39,7 @@
     <?php endif; wp_reset_postdata(); ?>
 
     <section class="sidebar-category-link">
-        <a href="<?php echo $category_url; ?>" class="button">Alle Beiträge zu <?php echo $category_name; ?>&nbsp;»</a>
+        <a href="<?php echo $category_url; ?>" class="button dark">Alle Beiträge zu <?php echo $category_name; ?>&nbsp;»</a>
     </section>
 
 
