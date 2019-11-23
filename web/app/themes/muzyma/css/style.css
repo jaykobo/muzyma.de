@@ -257,12 +257,14 @@
 		{
 		}
 
+			article ul,
 			ul.default
 			{
 				list-style: disc;
 				padding-left: 1em;
 			}
 
+				article ul li,
 				ul.default li
 				{
 					padding-left: 0.5em;
