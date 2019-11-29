@@ -44,7 +44,8 @@
     "wpackagist-plugin/regenerate-thumbnails": "3.1.2",
     "wpackagist-plugin/classic-editor": "1.5",
     "wpackagist-plugin/wp-optimize": "3.0.14",
-    "wpackagist-plugin/wpforms-lite": "1.5.6.2"
+    "wpackagist-plugin/wpforms-lite": "1.5.6.2",
+    "wpackagist-plugin/wordpress-seo":"12.6.2"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
