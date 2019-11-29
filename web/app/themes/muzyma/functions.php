@@ -4,10 +4,10 @@
 // CUSTOM FUNCTIONS
 // ================================================================================================
 
-/*
+/**
  * GRAB ACF IMAGE ALT-TEXT OTHERWISE USE FALLBACK
  *
-*/
+ */
 if ( ! function_exists( 'acf_image_fallback_alt' ) ) {
 
     function acf_image_fallback_alt($image) {
@@ -38,10 +38,10 @@ if ( ! function_exists( 'acf_image_fallback_alt' ) ) {
     }
 }
 
-/*
+/**
  * Add custom class to prev/next links
  *
-*/
+ */
 add_filter('next_posts_link_attributes', 'posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'posts_link_attributes');
 
@@ -52,12 +52,12 @@ function posts_link_attributes() {
 
 
 
-/*
+/**
  * ADD CUSTOM WP GALLERY OUTPUT
  * Customize the last half, the output half to suit your projects needs
  *
  * From https://stackoverflow.com/a/22660335
-*/
+ */
 
 add_filter('post_gallery', 'my_post_gallery', 10, 2);
 function my_post_gallery($output, $attr) {
@@ -138,12 +138,12 @@ function my_post_gallery($output, $attr) {
 
 
 
-/*
+/**
  * ADD SHORTCODE
  * to calculate given year (of birth)
  *
- * @author Jakob Neumann
-*/
+ * @author Jakob Strauß
+ */
 
 function calc_age( $atts ) {
 
@@ -173,11 +173,11 @@ add_shortcode( 'Alter', 'calc_age' );
 
 
 
-/*
- * REMOVE P TAGS FROM IFRAMES.
+/**
+ * REMOVE <P> TAGS FROM IFRAMES
  *
  * From: https://wordpress.stackexchange.com/questions/239452/removing-p-tags-around-img-iframes-and-also-scripts/239457#239457
-*/
+ */
 function remove_ptags_around_iframe( $content ) {
     $content = preg_replace('/<p>\s*(<iframe.*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
     return $content;
@@ -185,12 +185,12 @@ function remove_ptags_around_iframe( $content ) {
 add_filter( 'the_content', 'remove_ptags_around_iframe' );
 
 
-/*
+/**
  * WRAP IFRAME OR EMBED WITH DIV
  * to make videos responsive
  *
  * From: https://marctroendle.de/blog/responsive-videos/
-*/
+ */
 
 function responsive_video_wrap( $content ) {
     $pattern = '~<iframe.*</iframe>|<embed.*</embed>~';
@@ -208,23 +208,14 @@ add_filter('the_content', 'responsive_video_wrap');
 
 
 
-
-/*
+/**
  * REGISTER CUSTOMIZER - EXTRA TEXTBOX
  * for Footer Text Input
  *
  * From: https://wptheming.com/2014/09/customizer-panels-field-types/
-*/
+ */
 
 function mp_customizer_register( $wp_customize ) {
-
-	// $wp_customize->add_panel( 'footer_panel_id', array(
-	//     'priority'       => 500,
-	//     'capability'     => 'edit_theme_options',
-	//     'theme_supports' => '',
-	//     'title'          => 'Footer',
-	//     'description'    => 'Description of what this panel does.',
-	// ) );
 
 	$wp_customize->add_section( 'footer_content_section_id', array(
 	    'priority'       => 500,
@@ -232,7 +223,6 @@ function mp_customizer_register( $wp_customize ) {
 	    'theme_supports' => '',
 	    'title'          => 'Footer Block',
 	    'description'    => 'Mit diesen Eingabefeldern lassen sich die Textinhalte im Footer anpassen. Die Eingabe ist optional. Werden die Felder leer gelassen, wird ein definierter Standardinhalt ausgegeben.',
-	    // 'panel'          => 'footer_panel_id',
 	) );
 
     // Add Headline
@@ -898,8 +888,8 @@ add_action( 'init', 'mp_ct_material', 0 );
 // ================================================================================================
 
 /**
-* Disable the emoji's
-*/
+ * Disable the emoji's
+ */
 function disable_emojis() {
     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
     remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -914,11 +904,11 @@ function disable_emojis() {
 add_action( 'init', 'disable_emojis' );
 
 /**
-* Filter function used to remove the tinymce emoji plugin.
-*
-* @param array $plugins
-* @return array Difference betwen the two arrays
-*/
+ * Filter function used to remove the tinymce emoji plugin.
+ *
+ * @param array $plugins
+ * @return array Difference betwen the two arrays
+ */
 function disable_emojis_tinymce( $plugins ) {
     if ( is_array( $plugins ) ) {
         return array_diff( $plugins, array( 'wpemoji' ) );
@@ -928,12 +918,12 @@ function disable_emojis_tinymce( $plugins ) {
 }
 
 /**
-* Remove emoji CDN hostname from DNS prefetching hints.
-*
-* @param array $urls URLs to print for resource hints.
-* @param string $relation_type The relation type the URLs are printed for.
-* @return array Difference betwen the two arrays.
-*/
+ * Remove emoji CDN hostname from DNS prefetching hints.
+ *
+ * @param array $urls URLs to print for resource hints.
+ * @param string $relation_type The relation type the URLs are printed for.
+ * @return array Difference betwen the two arrays.
+ */
 function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
     if ( 'dns-prefetch' == $relation_type ) {
         /** This filter is documented in wp-includes/formatting.php */
@@ -948,8 +938,8 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
 
 
 /**
-* Dequeue jQuery Migrate Script in WordPress.
-*/
+ * Dequeue jQuery Migrate Script in WordPress.
+ */
 if ( ! function_exists( 'evolution_remove_jquery_migrate' ) ) {
 
     function evolution_remove_jquery_migrate( &$scripts) {
