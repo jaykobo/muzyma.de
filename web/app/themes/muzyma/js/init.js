@@ -9,7 +9,7 @@
     skel.init({
         reset: 'full',
         breakpoints: {
-            'global': { range: '*', href: '/app/themes/muzyma/css/style.css', containers: 1200, grid: { gutters: 50 }, viewport: { scalable: false, width: "device-width" } },
+            'global': { range: '*', href: '/app/themes/muzyma/css/style.css', containers: 1200, grid: { gutters: 50 }, viewport: { scalable: false, width: 'device-width' } },
             'normal': { range: '-1280', href: '/app/themes/muzyma/css/style-normal.css', containers: 960, grid: { gutters: 40 } },
             'narrow': { range: '-1080', href: '/app/themes/muzyma/css/style-narrow.css', containers: '100%' },
             'narrower': { range: '-820', href: '/app/themes/muzyma/css/style-narrower.css', grid: { gutters: 30, collapse: 1 } },
