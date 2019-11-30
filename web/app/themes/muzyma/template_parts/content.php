@@ -1,5 +1,5 @@
 <article <?php post_class(); ?>>
-    <mark>template parts: content.php</mark>
+    <?php // <mark>template parts: content.php</mark> ?>
     <header>
         <h3><?php the_title(); ?></h3>
     </header>

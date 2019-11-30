@@ -10,7 +10,7 @@
 ?>
 
 <article <?php post_class(); ?>>
-    <mark>template parts: content-page.php</mark>
+    <?php // <mark>template parts: content-page.php</mark> ?>
     <header>
         <h2><?php the_title(); ?></h2>
 

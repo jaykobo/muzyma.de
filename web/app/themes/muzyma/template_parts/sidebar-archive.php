@@ -1,4 +1,4 @@
-<mark>template parts: sidebar-archive.php</mark>
+<?php // <mark>template parts: sidebar-archive.php</mark> ?>
 <section id="sidebar" class="sidebar-archive">
     <section>
         <header>

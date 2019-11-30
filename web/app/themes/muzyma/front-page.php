@@ -34,7 +34,7 @@
 
 </div> <!-- END #header-wrapper -->
 
-<mark>Inhalt: front-page.php</mark>
+<?php // <mark>Inhalt: front-page.php</mark> ?>
 
 <div class="wrapper" id="first">
     <section class="container">

@@ -2,7 +2,7 @@
 
 <div class="wrapper site-content">
     <div class="container" id="category">
-        <mark>Inhalt: category.php</mark>
+        <?php // <mark>Inhalt: category.php</mark> ?>
 
         <div class="row oneandhalf">
             <div class="8u">

@@ -11,7 +11,7 @@
 ?>
 
 <article <?php post_class(); ?>>
-    <mark>template parts: content-product.php</mark>
+    <?php // <mark>template parts: content-product.php</mark> ?>
 
     <header>
         <h2><?php the_title(); ?></h2>

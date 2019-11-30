@@ -2,7 +2,7 @@
 
 <div class="wrapper site-content">
     <div class="container" id="main">
-        <mark>Inhalt: single-poesie.php</mark>
+        <?php // <mark>Inhalt: single-poesie.php</mark> ?>
 
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <?php get_template_part( 'template_parts/content','poesie' ); ?>

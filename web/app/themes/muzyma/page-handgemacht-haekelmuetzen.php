@@ -2,7 +2,6 @@
 
 <div class="wrapper site-content">
     <div class="container" id="main">
-        <mark>Inhalt: page-<?php echo get_query_var('pagename');?>.php</mark>
 
         <?php get_template_part( 'template_parts/content','page-productlist' ); ?>
 

@@ -21,7 +21,7 @@
 
 <div class="wrapper site-content">
     <div class="container" id="main">
-        <!-- <mark>Inhalt: single.php</mark> -->
+        <?php // <mark>Inhalt: single.php</mark> ?>
 
         <div class="row oneandhalf">
             <div class="8u">
