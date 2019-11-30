@@ -33,7 +33,7 @@
                     <?php the_posts_pagination( $args ); ?>
 
                 <?php else : ?>
-                    <?php get_template_part( 'template_parts/content','error' ); ?>
+                    <?php get_template_part( 'template_parts/content','error-no-posts' ); ?>
                 <?php endif; ?>
             </div>
 
