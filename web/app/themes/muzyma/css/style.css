@@ -261,13 +261,14 @@
 			ul.default
 			{
 				list-style: disc;
-				padding-left: 1em;
+				padding-left: 1.2em;
 			}
 
 				article ul li,
 				ul.default li
 				{
 					padding-left: 0.5em;
+					margin-bottom: 0.5em;
 				}
 
 			ul.actions
