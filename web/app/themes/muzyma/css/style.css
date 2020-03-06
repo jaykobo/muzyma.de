@@ -768,6 +768,12 @@
 		margin-top: -0.8em;
 	}
 
+		.dropotron li.current-menu-item a
+		{
+			font-weight: 400;
+			color: #f35858;
+		}
+
 		.dropotron a,
 		.dropotron span
 		{
