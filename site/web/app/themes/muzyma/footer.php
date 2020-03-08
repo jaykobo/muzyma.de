@@ -21,7 +21,8 @@
                     ?>
                     </header>
                     <section class="container small">
-                        <?php echo do_shortcode('[wpforms id="617" title="false" description="false"]'); ?>
+                        <h4>Wir überarbeiten gerade unser Kontaktformular. Für direkt Anfragen wende dich bitte an <a href="mailto:info@muzyma.de">info@muzyma.de</a>. Danke für dein Verständnis.</h4>
+                        <?php // echo do_shortcode('[wpforms id="617" title="false" description="false"]'); ?>
                     </section>
                 </div>
                 <div id="copyright" class="container">
