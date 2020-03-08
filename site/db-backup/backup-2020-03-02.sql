@@ -646,7 +646,7 @@ CREATE TABLE `wp_users` (
 
 LOCK TABLES `wp_users` WRITE;
 /*!40000 ALTER TABLE `wp_users` DISABLE KEYS */;
-INSERT INTO `wp_users` VALUES (1,'admin','$2y$10$2IcPxlVC/55dMS8VbWBBAeWPQktUh8hH.1zKXwRi.dRZDQgfgnEDq','admin','admin@muzyma.test','','2017-10-04 19:09:54','',0,'admin');
+INSERT INTO `wp_users` VALUES (1,'admin','$2y$10$VR3sV0QmasHcadgqcmNCWOume50Oks/4wrG3TgXWOS9uVi7nN3CPO','admin','jkb.neumann+muzymaadmin@gmail.com','','2020-03-08 16:10:04','',0,'admin');
 /*!40000 ALTER TABLE `wp_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
