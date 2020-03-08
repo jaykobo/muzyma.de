@@ -34,12 +34,12 @@
     {
       "type": "package",
       "package": {
-        "name": "wp-sync-db/wp-sync-db",
+        "name": "corysimmons/wp-sync-db",
         "type": "wordpress-plugin",
-        "version": "1.5",
+        "version": "1.6",
         "dist": {
           "type": "zip",
-          "url": "https://github.com/wp-sync-db/wp-sync-db/archive/1.5.zip"
+          "url": "https://github.com/corysimmons/wp-sync-db/archive/1.6.zip"
         }
       }
     },
@@ -71,7 +71,7 @@
     "wpackagist-plugin/wpforms-lite": "1.5.9.1",
     "wpackagist-plugin/wordpress-seo":"13.2",
     "wpackagist-plugin/acf-content-analysis-for-yoast-seo":"2.3.0",
-    "wp-sync-db/wp-sync-db": "*",
+    "corysimmons/wp-sync-db": "*",
     "wp-sync-db/wp-sync-db-media-files": "*"
   },
   "require-dev": {

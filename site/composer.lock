@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7e01674c7251f0934d49baadead3650",
+    "content-hash": "f58569a15b39d2ab88dabe6e0ca926aa",
     "packages": [
         {
             "name": "composer/installers",
@@ -129,6 +129,17 @@
                 "zikula"
             ],
             "time": "2020-02-07T10:39:20+00:00"
+        },
+        {
+            "name": "corysimmons/wp-sync-db",
+            "version": "1.6",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/corysimmons/wp-sync-db/archive/1.6.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "wordpress-plugin"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -508,17 +519,6 @@
                 "environment"
             ],
             "time": "2019-01-29T11:11:52+00:00"
-        },
-        {
-            "name": "wp-sync-db/wp-sync-db",
-            "version": "1.5",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/wp-sync-db/wp-sync-db/archive/1.5.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "type": "wordpress-plugin"
         },
         {
             "name": "wp-sync-db/wp-sync-db-media-files",
